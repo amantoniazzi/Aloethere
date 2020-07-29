@@ -4,7 +4,7 @@ import { Text, TouchableOpacity } from 'react-native';
 const Home = ({ navigation }) => {
   return (
     <TouchableOpacity onPress={() => navigation.push('Search')}>
-      <Text>Home</Text>
+      <Text> Homeee! 🌿 </Text>
     </TouchableOpacity>
   );
 };
