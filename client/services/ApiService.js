@@ -1,7 +1,0 @@
-const BASE_URL = 'https://192.168.1.63:3001';
-
-function getPlants() {
-  return fetch(BASE_URL + '/plants').then((response) => response.json());
-}
-
-export default { getPlants };
