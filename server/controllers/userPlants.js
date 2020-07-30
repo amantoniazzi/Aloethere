@@ -1,12 +1,12 @@
-const { getAllUserPlants, 
-  createUserPlant, 
-  getUserPlantById, 
-  updateUserPlant, 
-  deleteUserPlantById, } = require ('../models/userPlants');
+const { getAllUserPlants,
+  createUserPlant,
+  getUserPlantById,
+  updateUserPlant,
+  deleteUserPlantById, } = require('../models/userPlants');
 
 exports.getUserPlants = async (req, res) => {
   try {
-    const plants =  await getAllUserPlants()
+    const plants = await getAllUserPlants()
     res.status(200).json(plants);
   } catch (error) {
     console.error(error); //eslint-disable-line
@@ -16,7 +16,7 @@ exports.getUserPlants = async (req, res) => {
 
 exports.postUserPlant = async (req, res) => {
   try {
-    const plant =  await createUserPlant(req);
+    const plant = await createUserPlant(req);
     res.status(201);
     res.json(plant);
   } catch (error) {
@@ -27,8 +27,7 @@ exports.postUserPlant = async (req, res) => {
 
 exports.getUserPlant = async (req, res) => {
   try {
-    const plant = await getUserPlantById({ _id: req.params.id })
-    .populate("plant_info")
+    const plant = await getUserPlantById(req.params.id)
     res.status(200);
     res.json(plant);
   } catch (error) {
@@ -39,7 +38,7 @@ exports.getUserPlant = async (req, res) => {
 
 exports.deleteUserPlant = async (req, res) => {
   try {
-    await deleteUserPlantById({_id: req.params.id});
+    await deleteUserPlantById(req.params.id);
     res.sendStatus(204);
   } catch (error) {
     console.error(error); //eslint-disable-line

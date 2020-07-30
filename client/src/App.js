@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from './containers/Home/Home';
 import Search from './containers/Search/Search';
-import MyPlantList from './components/MyPlantList/MyPlantList';
+import MyPlants from './containers/MyPlants/MyPlants';
 import './App.css';
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
             <Search />
           </Route>
           <Route path="/myplants">
-            <MyPlantList />
+            <MyPlants />
           </Route>
           <Route path="/">
             <Home />
