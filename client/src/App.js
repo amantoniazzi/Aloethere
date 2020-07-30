@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import Home from './Components/Home/Home';
-import SearchDashboard from './Components/SearchDashboard/SearchDashboard';
-import MyPlantList from './Components/MyPlantList/MyPlantList';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Home from './containers/Home/Home';
+import Search from './containers/Search/Search';
+import MyPlantList from './components/MyPlantList/MyPlantList';
 import './App.css';
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
 
         <Switch>
           <Route path="/plants">
-            <SearchDashboard />
+            <Search />
           </Route>
           <Route path="/myplants">
             <MyPlantList />

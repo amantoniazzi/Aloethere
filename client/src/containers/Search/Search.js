@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import ApiService from '../../Services/ApiService';
-import PlantList from '../PlantList/PlantList';
-import FilterForm from '../FilterForm/FilterForm';
-import './SearchDashboard.css';
+import ApiService from '../../services/ApiService';
+import PlantList from '../../components/PlantList/PlantList';
+import Filter from '../../components/Filter/Filter';
+import './Search.css';
 
-function SearchDashboard() {
+function Search() {
   const [plants, setPlants] = useState([]);
   const [filteredPlants, setfilteredPlants] = useState([]);
   console.log(filteredPlants);
@@ -18,26 +18,24 @@ function SearchDashboard() {
   }, []);
 
   const filterPlants = (plantFilter) => {
-    filterPlants = filteredPlants.filter((plant) => {
+    let foundPlants = filteredPlants.filter((plant) => {
       let plantLight = plant.light.toLowerCase();
       return plantLight.indexOf(
         plantFilter.toLowerCase()) !== -1
     })
-    this.setState({
-      filteredPlants
-    })
+    setfilteredPlants(foundPlants)
   }
 
   return (
     <div className="search_dashboard">
       <div className="dashboard_filter">
-        <FilterForm />
+        <Filter />
       </div>
       <div className="dashboard_plantlist">
-        <PlantList plants={plants} filterPlants={filterPlants} />
+        <PlantList plants={filteredPlants} filterPlants={filterPlants} />
       </div>
     </div>
   )
 }
 
-export default SearchDashboard;
+export default Search;
