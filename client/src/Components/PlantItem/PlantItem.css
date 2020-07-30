@@ -1,5 +1,5 @@
 .plantcard {
-  background-color: greenyellow;
+  background-color: #00BFA6;
   display: flex;
   flex-direction: column;
   flex: 0 0 250px;
@@ -10,14 +10,15 @@
   width: 250px;
 }
 
-.plantcard_img > img {
+.plantcard_img>img {
   width: 100%;
 }
+
 .plantcard-info {
   padding: 0 2vh;
 }
 
-.plantcard-title{
+.plantcard-title {
   margin-bottom: 4px;
 }
 
@@ -25,7 +26,7 @@
   margin-top: 0px;
 }
 
-.plantcard-icons{
+.plantcard-icons {
   display: flex;
   justify-content: row;
   padding: 0 2vh;

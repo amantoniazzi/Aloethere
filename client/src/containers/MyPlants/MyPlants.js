@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
+import { IoIosAddCircleOutline } from "react-icons/io";
 import ApiService from '../../services/ApiService';
 import MyPlantList from '../../components/MyPlantList/MyPlantList';
 import AddPlant from '../../components/AddPlant/AddPlant';
@@ -27,7 +28,7 @@ function MyPlants() {
       <div style={{ display: 'none' }}>
         <AddPlant myPlants={myPlants} createMyPlant={createMyPlant} />
       </div>
-      <Link to='/addplant'>Add a new plant!</Link>
+      <Link to='/addplant'><IoIosAddCircleOutline /> Add a new plant!</Link>
       <MyPlantList myPlants={myPlants} />
     </div>
   )
