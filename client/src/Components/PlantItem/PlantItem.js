@@ -1,4 +1,5 @@
 import React from 'react';
+// import { Link } from "react-router-dom";
 import './PlantItem.css'
 
 function PlantItem(props) {
@@ -31,7 +32,7 @@ function PlantItem(props) {
           }
         </div>
       </div>
-
+      {/* <Link to='/addplant'>Click Me</Link> */}
     </div>
   )
 
