@@ -32,12 +32,9 @@ const Search = () => {
   return (
     <SafeAreaView>
       <View>
-        <View>
-          <Filter />
-        </View>
-        <View>
-          <PlantList plants={plants} />
-        </View>
+        <Filter />
+
+        <PlantList plants={plants} />
       </View>
     </SafeAreaView>
   );

@@ -6,15 +6,14 @@ const PlantItem = ({ id, name, type, light, water, air_purifying }) => {
   console.log(name);
   return (
     <SafeAreaView>
-      <View styles={styles.plantcard_img}>
-        <img
+      {/* <View>
+        <Image source={require('../assets/' + id + '.jpg')}
           style={{
             width: 250,
           }}
-          src={require('../assets/' + id + '.jpg')}
           alt={name}
         />
-      </View>
+      </View> */}
       <View>
         <Text>{name}</Text>
         <Text>{type}</Text>
@@ -27,8 +26,8 @@ const PlantItem = ({ id, name, type, light, water, air_purifying }) => {
             ) : light === 'medium' ? (
               <Ionicons name="ios-partly-sunny" />
             ) : (
-                  <Ionicons name="ios-sunny" />
-                )}
+              <Ionicons name="ios-sunny" />
+            )}
           </Text>
         </View>
         <View>
@@ -61,18 +60,7 @@ const PlantItem = ({ id, name, type, light, water, air_purifying }) => {
   );
 };
 
-const styles = StyleSheet.create({
-  plantcard_img: {
-    display: 'flex',
-    flexDirection: 'vertical',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    height: '100%',
-    textAlign: 'center',
-  },
-  img: {
-    width: 250,
-  },
-});
+// const styles = StyleSheet.create({
+// });
 
 export default PlantItem;
