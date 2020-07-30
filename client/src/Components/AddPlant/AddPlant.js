@@ -64,7 +64,7 @@ function AddPlant({ myPlants, createMyPlant }) {
       <input type="datetime-local" name={bought} value={bought} onChange={handleBought} />
       <h3 className="form_subtitle">WHEN DID YOU LAST WATER IT?</h3>
       <input type="datetime-local" name={lastWatered} value={lastWatered} onChange={handleLastWatered} />
-      <button className="form_btn" type="submit">Create event</button>
+      <button className="form_btn" type="submit">Add my new plant</button>
     </form>
 
   )
