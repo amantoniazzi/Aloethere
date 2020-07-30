@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useEffect } from 'react';
-import { SafeAreaView, FlatList, Text, View } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import ApiService from '../services/ApiService';
 import PlantList from '../components/PlantList.js';
 import Filter from '../components/Filter';

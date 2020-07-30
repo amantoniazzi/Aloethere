@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import Home from '../screens/Home';
 import Search from '../screens/Search';
@@ -13,7 +13,7 @@ function Navbar() {
     <Tab.Navigator
       initialRouteName="Home"
       tabBarOptions={{
-        activeTintColor: '#e91e63',
+        activeTintColor: '#00BFA6',
       }}
     >
       <Tab.Screen
@@ -22,7 +22,7 @@ function Navbar() {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <Ionicons name="ios-home" color={color} size={size} />
           ),
         }}
       />
@@ -32,11 +32,7 @@ function Navbar() {
         options={{
           tabBarLabel: 'Search',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons
-              name="card-search-outline"
-              color={color}
-              size={size}
-            />
+            <Ionicons name="ios-search" color={color} size={size} />
           ),
         }}
       />
@@ -46,11 +42,7 @@ function Navbar() {
         options={{
           tabBarLabel: 'MyPlants',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons
-              name="flower-tulip"
-              color={color}
-              size={size}
-            />
+            <Ionicons name="ios-leaf" color={color} size={size} />
           ),
         }}
       />
