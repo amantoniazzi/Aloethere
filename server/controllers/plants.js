@@ -1,8 +1,8 @@
-const Plants = require ('../models/plants');
+const Plants = require('../models/plants');
 
 exports.getPlants = async (req, res) => {
   try {
-    const plants =  await Plants.find();
+    const plants = await Plants.find();
     res.status(200);
     res.json(plants);
 
@@ -14,7 +14,7 @@ exports.getPlants = async (req, res) => {
 
 exports.postPlant = async (req, res) => {
   try {
-    const plant =  await Plants.create({
+    const plant = await Plants.create({
       scientific_name: req.body.scientific_name,
       common_name: req.body.common_name,
       type: req.body.type,
@@ -30,3 +30,19 @@ exports.postPlant = async (req, res) => {
     res.sendStatus(500);
   }
 }
+
+exports.searchPlants = async (req, res) => {
+  try {
+    let searchWord = req.query.q;
+    console.log(searchWord)
+    const plants = await Plants.findOne(
+      { "common_name": new RegExp(searchWord, "i") }
+    );
+    res.status(200);
+    res.json(plants);
+
+  } catch (error) {
+    console.error(error); //eslint-disable-line
+    res.sendStatus(500);
+  }
+};

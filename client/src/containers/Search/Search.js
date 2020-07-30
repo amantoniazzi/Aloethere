@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import ApiService from '../../services/ApiService';
 import PlantList from '../../components/PlantList/PlantList';
 import Filter from '../../components/Filter/Filter';
+import SearchBar from '../../components/SearchBar/SearchBar';
 import './Search.css';
 
 function Search() {
   const [plants, setPlants] = useState([]);
   const [filteredPlants, setfilteredPlants] = useState([]);
-  console.log(filteredPlants);
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     ApiService.getPlants()
@@ -26,13 +27,41 @@ function Search() {
     setfilteredPlants(foundPlants)
   }
 
+  const searchList = (word) => {
+    fetch(`https://localhost:3001/plants/search?q=${word}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data) setSearchResults([data]);
+        console.log(searchResults);
+      });
+  };
+
+  const emptySearch = () => {
+    setSearchResults([]);
+  };
+
+  const plantList = <PlantList
+    plants={plants}
+    label={'Plants'}
+    filterPlants={filterPlants}
+  />;
+
+  const resultList = <PlantList
+    plants={searchResults}
+    label={'Search'}
+  />;
+
   return (
     <div className="search_dashboard">
+      <SearchBar searchList={searchList} emptySearch={emptySearch} />
       <div className="dashboard_filter">
         <Filter />
       </div>
       <div className="dashboard_plantlist">
-        <PlantList plants={filteredPlants} filterPlants={filterPlants} />
+        {searchResults.length > 0
+          ? [resultList]
+          : [plantList]
+        }
       </div>
     </div>
   )

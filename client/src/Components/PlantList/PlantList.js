@@ -5,7 +5,7 @@ import './PlantList.css'
 function PlantList(props) {
 
   return (
-    <div className="list">
+    <div className="list" label={props.label}>
       {props.plants.map(plant =>
         <PlantItem key={plant._id} plant={plant} />
       )}
