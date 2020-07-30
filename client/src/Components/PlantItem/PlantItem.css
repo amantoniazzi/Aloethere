@@ -1,0 +1,32 @@
+.plantcard {
+  background-color: greenyellow;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 250px;
+  margin: 5vh;
+}
+
+.plantcard_img {
+  width: 250px;
+}
+
+.plantcard_img > img {
+  width: 100%;
+}
+.plantcard-info {
+  padding: 0 2vh;
+}
+
+.plantcard-title{
+  margin-bottom: 4px;
+}
+
+.plantcard-type {
+  margin-top: 0px;
+}
+
+.plantcard-icons{
+  display: flex;
+  justify-content: row;
+  padding: 0 2vh;
+}

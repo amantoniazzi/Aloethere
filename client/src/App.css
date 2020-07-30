@@ -1,0 +1,25 @@
+.App {
+  font-family: Avenir, Arial, sans-serif;
+}
+nav {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  height: 9vh;
+  width: 100vw;
+  background: white;
+  box-sizing: border-box; 
+}
+.App_navbar {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+.navbar_li {
+  font-weight: 800;
+}
+.navbar_li a {
+  text-decoration: none;
+  color: black;
+}

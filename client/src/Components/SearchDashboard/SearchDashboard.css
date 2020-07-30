@@ -1,0 +1,12 @@
+.search_dashboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.dashboard_filter {
+  padding-top: 12vh;
+  flex: 0 0 20%;
+}
+.dashboard_plantlist {
+  padding-top: 12vh;
+}
