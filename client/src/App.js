@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from './containers/Home/Home';
 import Search from './containers/Search/Search';
 import MyPlants from './containers/MyPlants/MyPlants';
-import AddPlant from './containers/AddPlant/AddPlant';
+import AddPlant from './components/AddPlant/AddPlant';
 import './App.css';
 
 function App() {
@@ -26,18 +26,18 @@ function App() {
         </nav>
 
         <Switch>
-          <Route path="/">
-            <Home />
-          </Route>
           <Route path="/plants">
             <Search />
           </Route>
           <Route path="/myplants">
             <MyPlants />
           </Route>
-          {/* <Route path="/addplant">
+          <Route path="/addplant">
             <AddPlant />
-          </Route> */}
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
         </Switch>
       </div>
     </Router>
