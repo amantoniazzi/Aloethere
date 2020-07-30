@@ -5,4 +5,9 @@ function getPlants() {
     .then(response => response.json())
 }
 
-export default { getPlants }
+function getMyPlants() {
+  return fetch(BASE_URL + '/myplants')
+    .then(response => response.json())
+}
+
+export default { getPlants, getMyPlants }

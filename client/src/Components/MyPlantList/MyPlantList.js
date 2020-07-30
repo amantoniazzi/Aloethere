@@ -1,7 +1,14 @@
 import React from 'react';
+import MyPlantItem from '../MyPlantItem/MyPlantItem';
 
-function MyPlantList() {
-  return <h2>my plant list</h2>
+function MyPlantList({ myPlants }) {
+  return (
+    <div className="list">
+      {myPlants.map(myPlant =>
+        <MyPlantItem key={myPlant._id} myPlant={myPlant} />
+      )}
+    </div>
+  )
 }
 
 export default MyPlantList;
