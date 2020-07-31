@@ -46,3 +46,27 @@ exports.searchPlants = async (req, res) => {
     res.sendStatus(500);
   }
 };
+
+function buildUserPlantFilterParams(light, humidity, water, air_purifying, type) {
+  return {
+    ...(type && { 'type': new RegExp(type) }),
+    ...(light && { 'light': new RegExp(light) }),
+    ...(water && { 'water': new RegExp(water) }),
+    ...(humidity && { 'humidity': new RegExp(humidity) }),
+    ...(air_purifying && { 'air_purifying': new RegExp(air_purifying) }),
+  }
+}
+
+exports.filterPlants = async (req, res) => {
+  try {
+    const filterParams = buildUserPlantFilterParams(req.body.light, req.body.humidity, req.body.water, req.body.air_purifying, req.body.type);
+    console.log(filterParams)
+    const plants = await Plants.findOne(filterParams);
+    res.status(200);
+    res.json(plants);
+
+  } catch (error) {
+    console.error(error); //eslint-disable-line
+    res.sendStatus(500);
+  }
+};
