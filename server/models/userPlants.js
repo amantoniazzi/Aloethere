@@ -1,19 +1,19 @@
-const mongoose = require ('./index');
+const mongoose = require('./index');
 const Schema = mongoose.Schema;
 
-const UserPlantSchema = new Schema ({
-  nickname: {type: String, required: true},
-  common_name: { type: String, required: true},
-  last_watered: {type: Date, required: true},
-  bought: {type: Date, required: true },
-  plant_info: {type: Schema.Types.ObjectId, ref: "Plants"},
+const UserPlantSchema = new Schema({
+  nickname: { type: String, required: true },
+  common_name: { type: String, required: true },
+  last_watered: { type: Date, required: true },
+  bought: { type: Date, required: true },
+  plant_info: { type: Schema.Types.ObjectId, ref: "Plants" },
 })
 
 const UserPlants = mongoose.model('UserPlants', UserPlantSchema);
 
 async function getAllUserPlants() {
-    return await UserPlants.find()
-    .populate("plant_info");
+  return await UserPlants.find()
+    .populate({ path: 'plant_info' });
 }
 
 async function createUserPlant(req) {
@@ -28,16 +28,16 @@ async function createUserPlant(req) {
 
 async function getUserPlantById(id) {
   return await UserPlants.findOne({ _id: id })
-  .populate("plant_info")
+    .populate("plant_info")
 }
 
 async function deleteUserPlantById(id) {
-  return await UserPlants.findByIdAndDelete({_id: id});
+  return await UserPlants.findByIdAndDelete({ _id: id });
 }
 
 async function updateUserPlant(userPlantId, updateParams) {
   return await UserPlants.findOneAndUpdate(
-    {_id: userPlantId}, 
+    { _id: userPlantId },
     updateParams,
     { new: true }
   );

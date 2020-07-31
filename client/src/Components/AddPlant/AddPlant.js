@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import { useParams, useLocation } from 'react-router-dom';
 import ApiService from '../../services/ApiService';
 import './AddPlant.css';
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
 
 function AddPlant({ myPlants, createMyPlant }) {
 
@@ -8,12 +13,17 @@ function AddPlant({ myPlants, createMyPlant }) {
   const [bought, setBought] = useState('');
   const [lastWatered, setLastWatered] = useState('');
 
+  let query = useQuery();
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!nickname) return alert('The name is missing!')
     if (!bought) return alert('The date is missing!')
     if (!lastWatered) return alert('The date is missing!')
-    createMyPlant(nickname, bought, lastWatered);
+    let common_name = query.get("name");
+    let id = query.get("id");
+    createMyPlant(nickname, bought, lastWatered, common_name, id);
     setNickname('');
     setBought('');
     setLastWatered('');

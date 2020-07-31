@@ -2,7 +2,6 @@ import React from 'react';
 import './MyPlantItem.css'
 
 function MyPlantItem({ myPlant }) {
-
   return (
     <div className="plantcard">
       <div className="plantcard_img">

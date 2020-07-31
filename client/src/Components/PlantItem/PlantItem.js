@@ -5,6 +5,10 @@ import './PlantItem.css'
 
 function PlantItem(props) {
 
+  const name = props.plant.common_name;
+  const id = props.plant._id;
+  const url = `/addplant?name=${name}&id=${id}`
+
   return (
     <div className="plantcard">
       <div className="plantcard_img">
@@ -33,7 +37,7 @@ function PlantItem(props) {
           }
         </div>
       </div> */}
-      <Link to='/addplant'>
+      <Link to={url}>
         <div>
           <IoMdAddCircleOutline className="add_icon" size={40} />
         </div>
