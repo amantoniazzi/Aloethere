@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { IoIosPartlySunny, IoMdSunny, IoIosWater, IoMdSnow } from "react-icons/io";
+import { IoIosPartlySunny, IoMdSunny, IoIosWater, IoMdSnow, IoMdAddCircleOutline } from "react-icons/io";
 import './PlantItem.css'
 
 function PlantItem(props) {
@@ -14,7 +14,7 @@ function PlantItem(props) {
         <h2 className="plantcard-title">{props.plant.common_name}</h2>
         <h4 className="plantcard-type">{props.plant.type}</h4>
       </div>
-      <div className="plantcard-icons">
+      {/* <div className="plantcard-icons">
         <div className="info-light">
           {props.plant.light === 'any' ? <IoIosPartlySunny />
             : props.plant.light === 'medium' ? <IoMdSunny />
@@ -29,11 +29,15 @@ function PlantItem(props) {
         </div>
         <div className="info-air">
           {!props.plant.air_purifying ? null
-            : IoMdSnow
+            : <IoMdSnow/>         
           }
         </div>
-      </div>
-      <Link to='/addplant'>Add Me</Link>
+      </div> */}
+      <Link to='/addplant'>
+        <div>
+          <IoMdAddCircleOutline className="add_icon" size={40} />
+        </div>
+      </Link>
     </div>
   )
 

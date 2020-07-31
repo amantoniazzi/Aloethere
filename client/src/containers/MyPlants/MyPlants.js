@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import ApiService from '../../services/ApiService';
 import MyPlantList from '../../components/MyPlantList/MyPlantList';
@@ -17,8 +16,8 @@ function MyPlants() {
       });
   }, []);
 
-  const createMyPlant = (nickname, commonName, bought, lastWatered, plantId) => {
-    let data = { nickname, commonName, bought, lastWatered, plantId }
+  const createMyPlant = (nickname, bought, lastWatered) => {
+    let data = { nickname, bought, lastWatered }
     ApiService.postMyPlant(data)
       .then(newplant => setMyPlants(myplants => [...myplants, newplant]))
   }
@@ -28,7 +27,6 @@ function MyPlants() {
       <div style={{ display: 'none' }}>
         <AddPlant myPlants={myPlants} createMyPlant={createMyPlant} />
       </div>
-      <Link to='/addplant'><IoIosAddCircleOutline /> Add a new plant!</Link>
       <MyPlantList myPlants={myPlants} />
     </div>
   )

@@ -1,0 +1,31 @@
+.plant_form {
+  text-align: center
+}
+
+/* HIDE RADIO */
+
+[type=radio] {
+  display: none;
+}
+
+.keep {
+  display: inline;
+}
+
+/* IMAGE STYLES */
+
+[type=radio]+.icon {
+  color: gray;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* CHECKED STYLES */
+
+[type=radio]:checked+.icon {
+  color: #f00;
+}
+
+input[type="radio"]:checked+.icon::before {
+  color: #f00;
+}
