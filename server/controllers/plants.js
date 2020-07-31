@@ -34,7 +34,6 @@ exports.postPlant = async (req, res) => {
 exports.searchPlants = async (req, res) => {
   try {
     let searchWord = req.query.q;
-    console.log(searchWord)
     const plants = await Plants.findOne(
       { "common_name": new RegExp(searchWord, "i") }
     );
@@ -53,15 +52,16 @@ function buildUserPlantFilterParams(light, humidity, water, air_purifying, type)
     ...(light && { 'light': new RegExp(light) }),
     ...(water && { 'water': new RegExp(water) }),
     ...(humidity && { 'humidity': new RegExp(humidity) }),
-    ...(air_purifying && { 'air_purifying': new RegExp(air_purifying) }),
+    ...(air_purifying && { 'air_purifying': air_purifying }),
   }
 }
 
 exports.filterPlants = async (req, res) => {
   try {
+    console.log(req.body)
     const filterParams = buildUserPlantFilterParams(req.body.light, req.body.humidity, req.body.water, req.body.air_purifying, req.body.type);
     console.log(filterParams)
-    const plants = await Plants.findOne(filterParams);
+    const plants = await Plants.find(filterParams);
     res.status(200);
     res.json(plants);
 

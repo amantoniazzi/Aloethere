@@ -10,13 +10,20 @@ function getMyPlants() {
     .then(response => response.json())
 }
 
-function postMyPlant (data) {
+function postMyPlant(data) {
   return fetch(BASE_URL + '/myplants', {
     method: 'POST',
-    headers: {'Content-Type' : 'application/json'},
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
   })
     .then(response => response.json())
 }
 
-export default { getPlants, getMyPlants, postMyPlant }
+function getFilterPlants(data) {
+  console.log(data)
+  return fetch(BASE_URL + '/plants/filter')
+    .then(response => response.json())
+
+}
+
+export default { getPlants, getMyPlants, postMyPlant, getFilterPlants }
