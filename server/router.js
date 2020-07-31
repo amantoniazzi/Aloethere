@@ -5,6 +5,7 @@ const userPlantController = require('./controllers/userPlants');
 
 router.get('/plants', plantController.getPlants);
 router.post('/plants', plantController.postPlant);
+router.put('/plants/:id', plantController.editPlant);
 router.get('/plants/search', plantController.searchPlants);
 router.get('/plants/filter', plantController.filterPlants);
 

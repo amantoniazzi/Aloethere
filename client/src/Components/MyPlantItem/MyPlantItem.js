@@ -5,12 +5,12 @@ function MyPlantItem({ myPlant }) {
   return (
     <div className="plantcard">
       <div className="plantcard_img">
-        <img src={require('../../assets/' + myPlant.plant_info._id + '.jpg')} alt={myPlant.common_name} />
+        <img src={require('../../assets/' + myPlant.plantInfo._id + '.jpg')} alt={myPlant.commonName} />
       </div>
       <div className="plantcard-info">
-        <h2 className="plantcard-title">{myPlant.nickname}</h2>
-        <h4 className="plantcard-type">{myPlant.plant_info.type}</h4>
-        <h4 className="plantcard-water">{myPlant.last_watered}</h4>
+        <h2 className="plantcard-title">{myPlant.nickName}</h2>
+        <h4 className="plantcard-type">{myPlant.plantInfo.type}</h4>
+        <h4 className="plantcard-water">{myPlant.lastWatered}</h4>
       </div>
 
     </div>

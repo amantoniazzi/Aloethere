@@ -13,10 +13,6 @@ function App() {
   const [plants, setPlants] = useState([]);
   const [myPlants, setMyPlants] = useState([]);
 
-  // useEffect(() => {
-  //   getMyPlants();
-  // }, []);
-
   const getMyPlants = () => {
     ApiService.getMyPlants()
       .then(data => {
@@ -25,13 +21,13 @@ function App() {
       });
   }
 
-  const createMyPlant = (nickname, bought, lastWatered, common_name, id) => {
-    let data = { nickname, bought, 'last_watered': lastWatered, common_name, id }
+  const createMyPlant = (nickName, bought, lastWatered, commonName, id) => {
+    let data = { nickName, bought, lastWatered, commonName, id }
     ApiService.postMyPlant(data)
   }
 
-  const filterPlants = (type, light, water, humidity, airPurifying) => {
-    ApiService.getFilterPlants(type, light, water, humidity, airPurifying)
+  const filterPlants = (difficulty, type, light, water, humidity, airPurifying) => {
+    ApiService.getFilterPlants(difficulty, type, light, water, humidity, airPurifying)
       .then(data => {
         if (data) setPlants(data);
         console.log(data);
@@ -69,10 +65,10 @@ function App() {
             <Search plants={plants} filterPlants={filterPlants} />
           </Route>
           <Route path="/myplants">
-            <MyPlants myPlants={myPlants} createMyPlant={createMyPlant} getMyPlants={getMyPlants} />
+            <MyPlants myPlants={myPlants} getMyPlants={getMyPlants} />
           </Route>
           <Route path="/addplant">
-            <AddPlant myPlants={myPlants} createMyPlant={createMyPlant} />
+            <AddPlant createMyPlant={createMyPlant} />
           </Route>
           <Route path="/">
             <Home />

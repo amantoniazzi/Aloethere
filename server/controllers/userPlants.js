@@ -54,7 +54,7 @@ function buildUserPlantUpdateParams(nickname, boughtDate) {
 }
 
 exports.editUserPlant = async (req, res) => {
-  const updateParams = buildUserPlantUpdateParams(req.body.nickname, req.body.bought)
+  const updateParams = buildUserPlantUpdateParams(req.body.nickName, req.body.bought)
 
   try {
     const plant = await updateUserPlant(req.params.id, updateParams)

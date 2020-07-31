@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 import { IoIosPartlySunny, IoMdSunny, IoIosWater, IoMdSnow, IoMdAddCircleOutline } from "react-icons/io";
 import './PlantItem.css'
 
-function PlantItem(props) {
+function PlantItem({ plant }) {
 
-  const name = props.plant.common_name;
-  const id = props.plant._id;
+  const name = plant.commonName;
+  const id = plant._id;
   const url = `/addplant?name=${name}&id=${id}`
 
   return (
     <div className="plantcard">
       <div className="plantcard_img">
-        <img src={require('../../assets/' + props.plant._id + '.jpg')} alt={props.plant.common_name} />
+        <img src={require('../../assets/' + plant._id + '.jpg')} alt={plant.commonName} />
       </div>
       <div className="plantcard-info">
-        <h2 className="plantcard-title">{props.plant.common_name}</h2>
-        <h4 className="plantcard-type">{props.plant.type}</h4>
+        <h2 className="plantcard-title">{plant.commonName}</h2>
+        <h4 className="plantcard-type">{plant.scientificName}</h4>
       </div>
       {/* <div className="plantcard-icons">
         <div className="info-light">

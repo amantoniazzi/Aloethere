@@ -34,6 +34,7 @@ function AddPlant({ myPlants, createMyPlant }) {
   }
 
   const handleBought = (e) => {
+    console.log(e.target.value)
     setBought(e.target.value);
   }
 

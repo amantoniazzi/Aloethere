@@ -2,27 +2,27 @@ const mongoose = require('./index');
 const Schema = mongoose.Schema;
 
 const UserPlantSchema = new Schema({
-  nickname: { type: String, required: true },
-  common_name: { type: String, required: true },
-  last_watered: { type: Date, required: true },
+  nickName: { type: String, required: true },
+  commonName: { type: String, required: true },
+  lastWatered: { type: Date, required: true },
   bought: { type: Date, required: true },
-  plant_info: { type: Schema.Types.ObjectId, ref: "Plants" },
+  plantInfo: { type: Schema.Types.ObjectId, ref: "Plants" },
 })
 
 const UserPlants = mongoose.model('UserPlants', UserPlantSchema);
 
 async function getAllUserPlants() {
   return await UserPlants.find()
-    .populate({ path: 'plant_info' });
+    .populate({ path: 'plantInfo' });
 }
 
 async function createUserPlant(req) {
   return await UserPlants.create({
-    nickname: req.body.nickname,
-    common_name: req.body.common_name,
-    last_watered: req.body.last_watered,
+    nickName: req.body.nickName,
+    commonName: req.body.commonName,
+    lastWatered: req.body.lastWatered,
     bought: req.body.bought,
-    plant_info: req.body.id
+    plantInfo: req.body.id
   })
 }
 

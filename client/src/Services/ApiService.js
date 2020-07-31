@@ -20,8 +20,8 @@ function postMyPlant(data) {
     .then(response => response.json())
 }
 
-function getFilterPlants(type, light, water, humidity, airPurifying) {
-  return fetch(`${BASE_URL}/plants/filter/?type=${type}&light=${light}&water=${water}&humidity=${humidity}&airPurifying=${airPurifying}`)
+function getFilterPlants(difficulty, type, light, water, humidity, airPurifying) {
+  return fetch(`${BASE_URL}/plants/filter/?difficulty=${difficulty}&type=${type}&light=${light}&water=${water}&humidity=${humidity}&airPurifying=${airPurifying}`)
     .then(response => response.json())
 }
 
