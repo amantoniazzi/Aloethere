@@ -9,7 +9,7 @@ function MyPlantItem({ myPlant }) {
       </div>
       <div className="plantcard-info">
         <h2 className="plantcard-title">{myPlant.nickName}</h2>
-        <h4 className="plantcard-type">{myPlant.plantInfo.type}</h4>
+        <h4 className="plantcard-type">{myPlant.plantInfo.commonName}</h4>
         <h4 className="plantcard-water">{myPlant.lastWatered}</h4>
       </div>
 
