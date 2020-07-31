@@ -55,7 +55,7 @@ function Filter({ plants, filterPlants }) {
       <h3 className="form_subtitle">How much light do you have?</h3>
       <div onChange={handleLight}>
         <label>
-          <input type="radio" name="light" value="light" />
+          <input type="radio" name="light" value="any" />
           <div className="icon">
             <IoMdSunny size={25} />
           </div>
@@ -67,7 +67,7 @@ function Filter({ plants, filterPlants }) {
           </div>
         </label>
         <label>
-          <input type="radio" name="light" value="any" />
+          <input type="radio" name="light" value="light" />
           <div className="icon">
             <IoMdSunny size={25} />
           </div>
@@ -76,7 +76,7 @@ function Filter({ plants, filterPlants }) {
       <h3 className="form_subtitle">How much water?</h3>
       <div onChange={handleWater}>
         <label>
-          <input type="radio" name="water" id="water1" value="weekly" />
+          <input type="radio" name="water" id="water1" value="low" />
           <div className="icon">
             <IoIosWater size={25} />
           </div>
@@ -88,7 +88,7 @@ function Filter({ plants, filterPlants }) {
           </div>
         </label>
         <label>
-          <input type="radio" id="water3" name="water" value="high" />
+          <input type="radio" id="water3" name="water" value="weekly" />
           <div className="icon">
             <IoIosWater size={25} />
           </div>
@@ -97,7 +97,7 @@ function Filter({ plants, filterPlants }) {
       <h3 className="form_subtitle">How much humidity?</h3>
       <div onChange={handleHumidity}>
         <label>
-          <input type="radio" id="humidity1" name="humidity" value="high" />
+          <input type="radio" id="humidity1" name="humidity" value="hum" />
           <div className="icon">
             <IoIosThermometer size={25} />
           </div>
@@ -109,7 +109,7 @@ function Filter({ plants, filterPlants }) {
           </div>
         </label>
         <label>
-          <input type="radio" id="humidity3" name="humidity" value="humidity3" />
+          <input type="radio" id="humidity3" name="humidity" value="high" />
           <div className="icon">
             <IoIosThermometer size={25} />
           </div>

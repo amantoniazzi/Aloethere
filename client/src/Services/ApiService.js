@@ -19,11 +19,9 @@ function postMyPlant(data) {
     .then(response => response.json())
 }
 
-function getFilterPlants(data) {
-  console.log(data)
-  return fetch(BASE_URL + '/plants/filter')
+function getFilterPlants(type, light, water, humidity, airPurifying) {
+  return fetch(`${BASE_URL}/plants/filter/?type=${type}&light=${light}&water=${water}&humidity=${humidity}&airPurifying=${airPurifying}`)
     .then(response => response.json())
-
 }
 
 export default { getPlants, getMyPlants, postMyPlant, getFilterPlants }

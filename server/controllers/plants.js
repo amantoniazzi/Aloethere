@@ -58,8 +58,7 @@ function buildUserPlantFilterParams(light, humidity, water, air_purifying, type)
 
 exports.filterPlants = async (req, res) => {
   try {
-    console.log(req.body)
-    const filterParams = buildUserPlantFilterParams(req.body.light, req.body.humidity, req.body.water, req.body.air_purifying, req.body.type);
+    const filterParams = buildUserPlantFilterParams(req.query.light, req.query.humidity, req.query.water, req.query.air_purifying, req.query.type);
     console.log(filterParams)
     const plants = await Plants.find(filterParams);
     res.status(200);

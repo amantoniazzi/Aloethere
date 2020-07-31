@@ -11,9 +11,23 @@ import './App.css';
 function App() {
 
   const [plants, setPlants] = useState([]);
+  const [myPlants, setMyPlants] = useState([]);
+
+  useEffect(() => {
+    ApiService.getMyPlants()
+      .then(data => {
+        setMyPlants(data);
+      });
+  }, []);
+
+  const createMyPlant = (nickname, bought, lastWatered) => {
+    let data = { nickname, bought, lastWatered }
+    ApiService.postMyPlant(data)
+      .then(newplant => setMyPlants(myplants => [...myplants, newplant]))
+  }
 
   const filterPlants = (type, light, water, humidity, airPurifying) => {
-      ApiService.getFilterPlants({ type, light, water, humidity, 'air_purifying': airPurifying })
+    ApiService.getFilterPlants(type, light, water, humidity, airPurifying)
       .then(data => {
         if (data) setPlants(data);
         console.log(data);
@@ -51,10 +65,10 @@ function App() {
             <Search plants={plants} filterPlants={filterPlants} />
           </Route>
           <Route path="/myplants">
-            <MyPlants />
+            <MyPlants myPlants={myPlants} createMyPlant={createMyPlant} />
           </Route>
           <Route path="/addplant">
-            <AddPlant />
+            <AddPlant myPlants={myPlants} createMyPlant={createMyPlant} />
           </Route>
           <Route path="/">
             <Home />
