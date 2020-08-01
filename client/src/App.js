@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { IoIosHome, IoIosLeaf, IoIosSearch } from "react-icons/io";
 import ApiService from './services/ApiService';
+import moment from 'moment';
 import Home from './containers/Home/Home';
 import Search from './containers/Search/Search';
 import MyPlants from './containers/MyPlants/MyPlants';
@@ -12,6 +13,18 @@ function App() {
 
   const [plants, setPlants] = useState([]);
   const [myPlants, setMyPlants] = useState([]);
+  const [shouldWater, setShouldWater] = useState(false);
+
+  useEffect(() => {
+    const shouldIWater = myPlants.some(myPlant => {
+      const interval = myPlant.plantInfo.water.split(" ")[0];
+      const new_date = moment(myPlant.lastWatered).add(interval, 'days');
+      const current = moment();
+      const diff = new_date.diff(current, 'days') + 1;
+      if (diff < 0) return true;
+    })
+    setShouldWater(shouldIWater);
+  }, [myPlants]) 
 
   const getMyPlants = () => {
     ApiService.getMyPlants()
@@ -38,6 +51,7 @@ function App() {
     let data = { id, lastWatered };
     ApiService.editMyPlant(data);
   }
+  
 
   // const searchList = (word) => {
   //   fetch(`https://localhost:3001/plants/search?q=${word}`)
@@ -69,13 +83,17 @@ function App() {
             <Search plants={plants} filterPlants={filterPlants} />
           </Route>
           <Route path="/myplants">
-            <MyPlants myPlants={myPlants} getMyPlants={getMyPlants} updateMyPlant={updateMyPlant} />
+            <MyPlants
+              myPlants={myPlants}
+              getMyPlants={getMyPlants}
+              updateMyPlant={updateMyPlant}
+            />
           </Route>
           <Route path="/addplant">
             <AddPlant createMyPlant={createMyPlant} />
           </Route>
           <Route path="/">
-            <Home />
+            <Home shouldWater={shouldWater}/>
           </Route>
         </Switch>
       </div>
