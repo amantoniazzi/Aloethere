@@ -5,30 +5,6 @@ import SearchBar from '../../components/SearchBar/SearchBar';
 import './Search.css';
 
 function Search({ plants, filterPlants }) {
-  const [searchResults, setSearchResults] = useState([]);
-
-  const searchList = (word) => {
-    fetch(`https://localhost:3001/plants/search?q=${word}`)
-      .then(response => response.json())
-      .then(data => {
-        if (data) setSearchResults([data]);
-        console.log(searchResults);
-      });
-  };
-
-  const emptySearch = () => {
-    setSearchResults([]);
-  };
-
-  const plantList = <PlantList
-    plants={plants}
-    label={'Plants'}
-  />;
-
-  const resultList = <PlantList
-    plants={searchResults}
-    label={'Search'}
-  />;
 
   return (
     <div className="search_dashboard">
@@ -40,10 +16,10 @@ function Search({ plants, filterPlants }) {
         }
       </div>
       <div className="dashboard_plantlist">
-        {searchResults.length > 0
-          ? [resultList]
-          : [plantList]
-        }
+        <PlantList
+          plants={plants}
+          label={'Plants'}
+        />
       </div>
     </div>
   )

@@ -53,15 +53,6 @@ function App() {
     ApiService.editMyPlant(data);
   }
 
-
-  // const searchList = (word) => {
-  //   fetch(`https://localhost:3001/plants/search?q=${word}`)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       if (data) setSearchResults([data]);
-  //     });
-  // };
-
   return (
     <Router history={history}>
       <div className="App">
@@ -99,6 +90,7 @@ function App() {
           <Route path="/myplants">
             <MyPlants
               myPlants={myPlants}
+              shouldWater={shouldWater}
               getMyPlants={getMyPlants}
               updateMyPlant={updateMyPlant}
             />

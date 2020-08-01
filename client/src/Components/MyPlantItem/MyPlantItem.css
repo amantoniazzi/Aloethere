@@ -1,0 +1,54 @@
+/* #00BFA6 */
+
+.myplantcard {
+  background-color: #CDD0D0;
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 350px;
+  margin: 5%;
+  box-sizing: border-box;
+  padding: 3%;
+}
+
+.myplantcard_img {
+  flex: 0 0 125px;
+  padding-right: 5%;
+}
+
+.myplantcard_img>img {
+  border-radius: 50%;
+  width: 150px;
+}
+
+.myplantcard-info {
+  padding: 0;
+  margin: 0;
+}
+
+.myplantcard-title {
+  margin-top: 0px;
+  margin-bottom: 2px;
+}
+
+.myplantcard-type {
+  margin-top: 0px;
+  font-weight: 100;
+}
+
+.myplantcard-icons {
+  display: flex;
+  justify-content: row;
+  padding: 0 2vh;
+}
+
+.button_water_green {
+  margin: 0px;
+  background: #00BFA6;
+  color: black;
+}
+
+.button_water_yellow {
+  margin: 0px;
+  background: #F9A826;
+  color: black;
+}

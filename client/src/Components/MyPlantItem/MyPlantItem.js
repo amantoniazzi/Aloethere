@@ -1,8 +1,9 @@
 import React from 'react';
 import moment from 'moment';
+import { GiWateringCan } from "react-icons/gi";
 import './MyPlantItem.css'
 
-function MyPlantItem({ myPlant, updateMyPlant, getMyPlants, updatePlantStatus }) {
+function MyPlantItem({ myPlant, updateMyPlant, shouldWater }) {
 
   const getInterval = (myPlant) => {
     return myPlant.plantInfo.water.split(" ")[0];
@@ -28,8 +29,8 @@ function MyPlantItem({ myPlant, updateMyPlant, getMyPlants, updatePlantStatus })
       if (getDifference(nextWatering) === 0) return 'Water me today!';
       return `Water me in ${getDifference(nextWatering)} days`;
     } else if (getDifference(nextWatering) < 0) {
-      if (getDifference(nextWatering) === -1) return `Water me! You are ${getDifference(nextWatering)} day late`;
-      return `Water me! You are ${getDifference(nextWatering)} days late`;
+      if (getDifference(nextWatering) === -1) return `You are ${getDifference(nextWatering)} day late`;
+      return `You are ${getDifference(nextWatering)} days late`;
     }
   }
 
@@ -40,15 +41,19 @@ function MyPlantItem({ myPlant, updateMyPlant, getMyPlants, updatePlantStatus })
   }
 
   return (
-    <div className="plantcard">
-      <div className="plantcard_img">
+
+    <div className="myplantcard">
+      <div className="myplantcard_img">
         <img src={require('../../assets/' + myPlant.plantInfo._id + '.jpg')} alt={myPlant.commonName} />
       </div>
-      <div className="plantcard-info">
-        <h2 className="plantcard-title">{myPlant.nickName}</h2>
-        <h4 className="plantcard-type">{myPlant.plantInfo.commonName}</h4>
-        <h4 className="plantcard-water">{displayDifference(nextWatering)}</h4>
-        <button type="button" onClick={handleClick}>I've just watered it!</button>
+      <div className="myplantcard-info">
+        <h2 className="myplantcard-title">{myPlant.nickName}</h2>
+        <h4 className="myplantcard-type">{myPlant.plantInfo.commonName}</h4>
+        <h4 className="myplantcard-water">{displayDifference(nextWatering)}</h4>
+        {(!shouldWater) ?
+          <button type="button" className="button_water_green" onClick={handleClick}><GiWateringCan size={32} /> </button>
+          : <button type="button" className="button_water_yellow" onClick={handleClick}><GiWateringCan size={32} /> </button>
+        }
       </div>
 
     </div>
