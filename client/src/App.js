@@ -85,7 +85,7 @@ function App() {
 
         <Switch>
           <Route path="/plants">
-            <Search plants={plants} filterPlants={filterPlants} />
+            <Search shouldWater={shouldWater} plants={plants} filterPlants={filterPlants} />
           </Route>
           <Route path="/myplants">
             <MyPlants

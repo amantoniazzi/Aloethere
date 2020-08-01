@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { IoIosStar, IoMdSunny, IoIosWater, IoIosThermometer, IoMdSnow } from "react-icons/io";
+import { RiCheckboxCircleLine } from "react-icons/ri";
 import './Filter.css';
 
-function Filter({ plants, filterPlants }) {
+function Filter({ plants, filterPlants, shouldWater }) {
 
   const [difficulty, setDifficulty] = useState('');
   const [type, setType] = useState('');
@@ -54,8 +55,11 @@ function Filter({ plants, filterPlants }) {
 
   return (
     <form className="plant_form" onSubmit={handleSubmit}>
-      <h2>Find the perfect plant to add to your plant fam 🌿</h2>
-
+      <h2>Find the perfect next plant to add to your plant fam <span role="img" aria-label="plant">🌿</span></h2>
+      {(!shouldWater) ?
+        <hr className="hr_green" />
+        : <hr className="hr_yellow" />
+      }
       <h3 className="form_subtitle">Are you an expert plant parent?</h3>
       <div onChange={handleDifficulty}>
         <label>
@@ -78,7 +82,7 @@ function Filter({ plants, filterPlants }) {
         </label>
       </div>
 
-      <h3 className="form_subtitle">How frequently are you okay to water it?</h3>
+      <h3 className="form_subtitle">Will you water it frequently?</h3>
       <div onChange={handleWater}>
         <label>
           <input type="radio" id="water1" value="30 days" />
@@ -144,15 +148,29 @@ function Filter({ plants, filterPlants }) {
         </label>
       </div>
       <h3 className="form_subtitle">What type of plant you prefer?</h3>
-      <input type="radio" className="keep" value='Ferns' name="type" onChange={handleType} />
+      <div onChange={handleType}>
 
-      <label>Ferns</label><br />
+        <label>
+          <input type="radio" value='Ferns' name="type" />
+          <div className="icon">
+            <RiCheckboxCircleLine size={20} />
+          </div>
+            Ferns
+        </label><br />
 
-      <input type="radio" className="keep" name="type" value="Trees" onChange={handleType} />
-      <label>Trees</label><br />
-
-      <input type="radio" className="keep" id="hanging" name="type" value="Hanging plants" onChange={handleType} />
-      <label>Hanging plants</label><br />
+        <label>
+          <input type="radio" name="type" value="Trees" />
+          <div className="icon">
+            <RiCheckboxCircleLine size={20} />
+          </div>
+          Trees</label><br />
+        <label>
+          <input type="radio" id="hanging" name="type" value="Hanging plants" />
+          <div className="icon">
+            <RiCheckboxCircleLine size={20} />
+          </div>
+          Hanging plants</label><br />
+      </div>
       <h3 className="form_subtitle">Are you looking for an airpurifying plant?</h3>
       <div onChange={handleAirPurifying} >
         <label>
@@ -162,7 +180,10 @@ function Filter({ plants, filterPlants }) {
           </div>
         </label>
       </div>
-      <button className="form_btn" type="submit">Find my perfect plant match!</button>
+      {(!shouldWater) ?
+        <button className="form_btn_green" type="submit">Find my perfect plant match!</button>
+        : <button className="form_btn_yellow" type="submit">Find my perfect plant match!</button>
+      }
     </form>
 
   )
