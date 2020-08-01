@@ -22,7 +22,7 @@ function App() {
   }
 
   const createMyPlant = (nickName, bought, lastWatered, commonName, id) => {
-    let data = { nickName, bought, lastWatered, commonName, id }
+    let data = { nickName, bought, lastWatered, commonName, id };
     ApiService.postMyPlant(data)
   }
 
@@ -32,7 +32,11 @@ function App() {
         if (data) setPlants(data);
         console.log(data);
       });
+  }
 
+  const updateMyPlant = (lastWatered) => {
+    let data = { lastWatered };
+    ApiService.editMyPlant(data);
   }
 
   // const searchList = (word) => {
@@ -65,7 +69,7 @@ function App() {
             <Search plants={plants} filterPlants={filterPlants} />
           </Route>
           <Route path="/myplants">
-            <MyPlants myPlants={myPlants} getMyPlants={getMyPlants} />
+            <MyPlants myPlants={myPlants} getMyPlants={getMyPlants} updateMyPlant={updateMyPlant} />
           </Route>
           <Route path="/addplant">
             <AddPlant createMyPlant={createMyPlant} />

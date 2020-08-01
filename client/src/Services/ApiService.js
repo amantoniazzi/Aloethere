@@ -11,7 +11,6 @@ function getMyPlants() {
 }
 
 function postMyPlant(data) {
-  console.log(data)
   return fetch(BASE_URL + '/myplants', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -25,4 +24,13 @@ function getFilterPlants(difficulty, type, light, water, humidity, airPurifying)
     .then(response => response.json())
 }
 
-export default { getPlants, getMyPlants, postMyPlant, getFilterPlants }
+function editMyPlant(data) {
+  return fetch(BASE_URL + '/myplants', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
+  })
+    .then(response => response.json())
+}
+
+export default { getPlants, getMyPlants, postMyPlant, getFilterPlants, editMyPlant }

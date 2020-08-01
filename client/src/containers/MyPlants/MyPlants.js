@@ -4,15 +4,14 @@ import MyPlantList from '../../components/MyPlantList/MyPlantList';
 import AddPlant from '../../components/AddPlant/AddPlant';
 import './MyPlants.css';
 
-function MyPlants({ myPlants, getMyPlants }) {
+function MyPlants({ myPlants, getMyPlants, updateMyPlant }) {
   useEffect(() => {
-    console.log('use effect');
     getMyPlants();
   }, [])
 
   return (
     <div className="myplants">
-      <MyPlantList myPlants={myPlants} />
+      <MyPlantList myPlants={myPlants} updateMyPlant={updateMyPlant} />
     </div>
   )
 

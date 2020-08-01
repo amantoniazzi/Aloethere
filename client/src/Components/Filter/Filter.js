@@ -146,13 +146,13 @@ function Filter({ plants, filterPlants }) {
       <h3 className="form_subtitle">What type of plant you prefer?</h3>
       <input type="radio" className="keep" value='Ferns' name="type" onChange={handleType} />
 
-      <label for="light1">Ferns</label><br />
+      <label>Ferns</label><br />
 
       <input type="radio" className="keep" name="type" value="Trees" onChange={handleType} />
-      <label for="light2">Trees</label><br />
+      <label>Trees</label><br />
 
       <input type="radio" className="keep" id="hanging" name="type" value="Hanging plants" onChange={handleType} />
-      <label for="light3">Hanging plants</label><br />
+      <label>Hanging plants</label><br />
       <h3 className="form_subtitle">Are you looking for an airpurifying plant?</h3>
       <div onChange={handleAirPurifying} >
         <label>
