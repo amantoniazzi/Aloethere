@@ -1,3 +1,101 @@
-.home {
-  margin-top: 100px;
+.Home {
+  margin-top: 17%;
+}
+
+.home_green, .home_yellow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home_title_green {
+  padding-top: 5%;
+  color: #00BFA6;
+  vertical-align: middle;
+  margin-bottom: 10px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+
+.home_title_yellow {
+  color: #F9A826;
+  margin-bottom: 10px;
+  padding-bottom: 0px;
+  text-align: center;
+}
+
+.title_text {
+  color: black;
+}
+
+.home_subtitle {
+  padding: 3%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button_green {
+  margin: 0 30%;
+  background: #00BFA6;
+  color: #ffffff;
+}
+
+.button_yellow {
+  margin: 0 30%;
+  background: #F9A826;
+  color: #ffffff;
+}
+
+.button_green:hover, .button_green:focus {
+  background: #00695A;
+}
+
+.button_yellow:hover, .button_yellow:focus {
+  background: #BD7F1B;
+}
+
+.button_yellow:focus, .button_green:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.button_yellow:active, .button_green:active {
+  transform: scale(0.99);
+}
+
+.home_img {
+  width: 100%;
+}
+
+.home_quote_green {
+  font-size: 20px;
+  text-align: center;
+  margin: 1% 5%;
+  border: 0.5px solid #00BFA6;
+}
+
+.home_quote_yellow {
+  font-size: 20px;
+  text-align: center;
+  margin: 1% 5%;
+  border: 0.5px solid #F9A826;
+}
+
+.quote_green {
+  color: #00BFA6;
+}
+
+.quote_yellow {
+  color: #F9A826;
 }

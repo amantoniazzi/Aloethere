@@ -1,6 +1,7 @@
 .App {
   font-family: Avenir, Arial, sans-serif;
 }
+
 nav {
   position: fixed;
   z-index: 10;
@@ -8,18 +9,34 @@ nav {
   height: 9vh;
   width: 100vw;
   background: white;
-  box-sizing: border-box; 
+  box-sizing: border-box;
+  border-bottom: 0.5px solid rgb(167, 163, 163);
 }
+
 .App_navbar {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
   padding-inline-start: 0px;
 }
+
 .navbar_li {
   font-weight: 800;
 }
+
 .navbar_li a {
   text-decoration: none;
   color: black;
+}
+
+.navbar_icon_green, .navbar_icon_yellow {
+  color: #CDD0D0
+}
+
+.navbar_icon_green:hover {
+  color: #00BFA6;
+}
+
+.navbar_icon_yellow:hover {
+  color: #F9A826;
 }

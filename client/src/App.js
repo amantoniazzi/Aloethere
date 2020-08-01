@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Router, Switch, Route, Link } from "react-router-dom";
 import { IoIosHome, IoIosLeaf, IoIosSearch } from "react-icons/io";
 import ApiService from './services/ApiService';
 import moment from 'moment';
@@ -7,6 +7,7 @@ import Home from './containers/Home/Home';
 import Search from './containers/Search/Search';
 import MyPlants from './containers/MyPlants/MyPlants';
 import AddPlant from './components/AddPlant/AddPlant';
+import history from './history';
 import './App.css';
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
       if (diff < 0) return true;
     })
     setShouldWater(shouldIWater);
-  }, [myPlants]) 
+  }, [myPlants])
 
   const getMyPlants = () => {
     ApiService.getMyPlants()
@@ -51,7 +52,7 @@ function App() {
     let data = { id, lastWatered };
     ApiService.editMyPlant(data);
   }
-  
+
 
   // const searchList = (word) => {
   //   fetch(`https://localhost:3001/plants/search?q=${word}`)
@@ -62,18 +63,31 @@ function App() {
   // };
 
   return (
-    <Router>
+    <Router history={history}>
       <div className="App">
-        <nav>
+        <nav className="App_nav">
           <ul className="App_navbar">
             <li className="navbar_li">
-              <Link to="/"><IoIosHome /> Home</Link>
+              <Link to="/">
+                {(!shouldWater) ?
+                  <div className="navbar_icon_green"><IoIosHome size={32} /></div>
+                  : <div className="navbar_icon_yellow"><IoIosHome size={32} /></div>
+                }
+              </Link>
             </li>
             <li className="navbar_li">
-              <Link to="/plants"><IoIosSearch /> Search</Link>
+              <Link to="/plants">
+                {(!shouldWater) ? <div className="navbar_icon_green"><IoIosSearch size={32} /></div>
+                  : <div className="navbar_icon_yellow"><IoIosSearch size={32} /></div>
+                }
+              </Link>
             </li>
             <li className="navbar_li">
-              <Link to="/myplants"><IoIosLeaf /> My plants</Link>
+              <Link to="/myplants">
+                {(!shouldWater) ? <div className="navbar_icon_green"><IoIosLeaf size={32} /></div>
+                  : <div className="navbar_icon_yellow"><IoIosLeaf size={32} /></div>
+                }
+              </Link>
             </li>
           </ul>
         </nav>
@@ -93,7 +107,7 @@ function App() {
             <AddPlant createMyPlant={createMyPlant} />
           </Route>
           <Route path="/">
-            <Home shouldWater={shouldWater}/>
+            <Home shouldWater={shouldWater} />
           </Route>
         </Switch>
       </div>
