@@ -13,6 +13,6 @@ router.post('/myplants', userPlantController.postUserPlant);
 router.get('/myplants', userPlantController.getUserPlants);
 router.get('/myplants/:id', userPlantController.getUserPlant);
 router.delete('/myplants/:id', userPlantController.deleteUserPlant);
-router.put('/myplants/:id', userPlantController.editUserPlant);
+router.put('/myplants', userPlantController.editUserPlant);
 
 module.exports = router;

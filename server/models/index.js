@@ -1,8 +1,9 @@
-const mongoose = require ('mongoose');
+const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/plants_db', {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false
 });
 
 mongoose.connection.on('error', err => console.log(err)); //eslint-disable-line

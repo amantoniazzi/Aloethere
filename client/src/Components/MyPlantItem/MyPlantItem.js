@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import './MyPlantItem.css'
 
-function MyPlantItem({ myPlant, updateMyPlant }) {
+function MyPlantItem({ myPlant, updateMyPlant, getMyPlants }) {
 
   const getInterval = (myPlant) => {
     return myPlant.plantInfo.water.split(" ")[0];
@@ -26,9 +26,11 @@ function MyPlantItem({ myPlant, updateMyPlant }) {
   console.log(getDifference(nextWatering));
 
   const handleClick = () => {
+    const id = myPlant._id;
     const currentDate = moment();
     console.log(currentDate)
-    updateMyPlant(currentDate)
+    updateMyPlant(id, currentDate);
+    getMyPlants();
   }
 
   return (

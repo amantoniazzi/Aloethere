@@ -46,18 +46,20 @@ exports.deleteUserPlant = async (req, res) => {
   }
 }
 
-function buildUserPlantUpdateParams(nickname, boughtDate) {
+function buildUserPlantUpdateParams(nickname, boughtDate, lastWatered) {
   return {
     ...(nickname && { nickname }),
-    ...(boughtDate && { boughtDate })
+    ...(boughtDate && { boughtDate }),
+    ...(lastWatered && { lastWatered })
   }
 }
 
 exports.editUserPlant = async (req, res) => {
-  const updateParams = buildUserPlantUpdateParams(req.body.nickName, req.body.bought)
+  const updateParams = buildUserPlantUpdateParams(req.body.nickName, req.body.bought, req.body.lastWatered)
 
   try {
-    const plant = await updateUserPlant(req.params.id, updateParams)
+    const plant = await updateUserPlant(req.body.id, updateParams)
+    console.log(req.body.id);
     res.status(200);
     res.json(plant);
   } catch (error) {

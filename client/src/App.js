@@ -34,8 +34,8 @@ function App() {
       });
   }
 
-  const updateMyPlant = (lastWatered) => {
-    let data = { lastWatered };
+  const updateMyPlant = (id, lastWatered) => {
+    let data = { id, lastWatered };
     ApiService.editMyPlant(data);
   }
 

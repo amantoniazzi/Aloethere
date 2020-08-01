@@ -11,7 +11,7 @@ function MyPlants({ myPlants, getMyPlants, updateMyPlant }) {
 
   return (
     <div className="myplants">
-      <MyPlantList myPlants={myPlants} updateMyPlant={updateMyPlant} />
+      <MyPlantList myPlants={myPlants} updateMyPlant={updateMyPlant} getMyPlants={getMyPlants}/>
     </div>
   )
 
