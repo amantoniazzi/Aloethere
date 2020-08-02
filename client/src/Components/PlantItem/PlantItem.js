@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { IoIosPartlySunny, IoMdSunny, IoIosWater, IoMdSnow, IoMdAddCircleOutline } from "react-icons/io";
+import { withRouter } from 'react-router-dom';
+import history from '../../history';
+import { IoIosPartlySunny, IoMdSunny, IoIosWater, IoMdSnow, IoMdAddCircleOutline, IoIosHeartEmpty } from "react-icons/io";
 import './PlantItem.css'
 
 function PlantItem({ plant }) {
@@ -16,7 +18,7 @@ function PlantItem({ plant }) {
       </div>
       <div className="plantcard-info">
         <h2 className="plantcard-title">{plant.commonName}</h2>
-        <h4 className="plantcard-type">{plant.scientificName}</h4>
+        <h4 className="plantcard-scientific">{plant.scientificName}</h4>
       </div>
       {/* <div className="plantcard-icons">
         <div className="info-light">
@@ -37,11 +39,10 @@ function PlantItem({ plant }) {
           }
         </div>
       </div> */}
-      <Link to={url}>
-        <div>
-          <IoMdAddCircleOutline className="add_icon" size={40} />
-        </div>
-      </Link>
+      <button className="add_button_yellow" type="button" onClick={() => history.push('/plants')}>
+        <IoIosHeartEmpty style={{ verticalAlign: 'baseline' }} size={18} />
+        <span className="add_button_text">  Add me</span>
+      </button>
     </div>
   )
 

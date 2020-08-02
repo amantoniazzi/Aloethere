@@ -55,7 +55,7 @@ function Filter({ plants, filterPlants, shouldWater }) {
 
   return (
     <form className="plant_form" onSubmit={handleSubmit}>
-      <h2>Find the perfect next plant to add to your plant fam <span role="img" aria-label="plant">🌿</span></h2>
+      <h2>Find your perfect plant match to add to the fam <span role="img" aria-label="plant">🌿</span></h2>
       {(!shouldWater) ?
         <hr className="hr_green" />
         : <hr className="hr_yellow" />

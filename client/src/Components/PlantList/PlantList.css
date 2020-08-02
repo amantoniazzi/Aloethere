@@ -2,4 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  flex-direction: row;
+}
+
+.clear_button_yellow {
+  flex-basis: 100%;
+  margin: 5% 20%;
 }

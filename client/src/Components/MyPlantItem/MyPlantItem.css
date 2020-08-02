@@ -17,6 +17,7 @@
 .myplantcard_img>img {
   border-radius: 50%;
   width: 150px;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 .myplantcard-info {
@@ -41,6 +42,7 @@
 }
 
 .button_water_green {
+  width: 120px;
   margin: 0px;
   background: #00BFA6;
   color: black;
@@ -48,6 +50,7 @@
 
 .button_water_yellow {
   margin: 0px;
+  width: 120px;
   background: #F9A826;
   color: black;
 }

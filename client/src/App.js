@@ -53,6 +53,10 @@ function App() {
     ApiService.editMyPlant(data);
   }
 
+  const emptyFilter = () => {
+    setPlants([]);
+  };
+
   return (
     <Router history={history}>
       <div className="App">
@@ -85,7 +89,12 @@ function App() {
 
         <Switch>
           <Route path="/plants">
-            <Search shouldWater={shouldWater} plants={plants} filterPlants={filterPlants} />
+            <Search
+              shouldWater={shouldWater}
+              plants={plants}
+              filterPlants={filterPlants}
+              emptyFilter={emptyFilter}
+            />
           </Route>
           <Route path="/myplants">
             <MyPlants

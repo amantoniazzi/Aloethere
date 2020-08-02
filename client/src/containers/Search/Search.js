@@ -4,7 +4,7 @@ import Filter from '../../components/Filter/Filter';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import './Search.css';
 
-function Search({ plants, filterPlants, shouldWater }) {
+function Search({ plants, filterPlants, shouldWater, emptyFilter }) {
 
   return (
     <div className="search_dashboard">
@@ -19,6 +19,7 @@ function Search({ plants, filterPlants, shouldWater }) {
         <PlantList
           plants={plants}
           label={'Plants'}
+          emptyFilter={emptyFilter}
         />
       </div>
     </div>
