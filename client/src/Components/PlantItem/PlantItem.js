@@ -39,7 +39,7 @@ function PlantItem({ plant }) {
           }
         </div>
       </div> */}
-      <button className="add_button_yellow" type="button" onClick={() => history.push('/plants')}>
+      <button className="add_button_yellow" type="button" onClick={() => history.push(url)}>
         <IoIosHeartEmpty style={{ verticalAlign: 'baseline' }} size={18} />
         <span className="add_button_text">  Add me</span>
       </button>

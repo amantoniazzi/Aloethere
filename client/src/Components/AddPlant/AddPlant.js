@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
+import history from '../../history';
 import './AddPlant.css';
 
 function useQuery() {
@@ -26,6 +27,7 @@ function AddPlant({ myPlants, createMyPlant }) {
     setNickName('');
     setBought('');
     setLastWatered('');
+    history.push('/myplants')
   }
 
   const handleNickName = (e) => {
