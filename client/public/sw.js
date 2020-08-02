@@ -1,3 +1,6 @@
+
+
+
 async function createNotificationSubscription() {
   //wait for service worker installation to be ready
   const serviceWorker = await navigator.serviceWorker.ready;
@@ -21,8 +24,8 @@ async function postSubscription(subscription) {
 
 function receivePushNotification(event) {
   console.log("[Service Worker] Push Received.");
-const { image, tag, url, title, text } = event.data.json();
-const options = {
+  const { image, tag, url, title, text } = event.data.json();
+  const options = {
     data: url,
     body: text,
     icon: image,
@@ -37,8 +40,8 @@ const options = {
 self.addEventListener("push", receivePushNotification);
 
 function openPushNotification(event) {
-  console.log("Notification click Received.",    event.notification.data);
-   event.notification.close();
+  console.log("Notification click Received.", event.notification.data);
+  event.notification.close();
   //do something
 }
 self.addEventListener("notificationclick", openPushNotification);

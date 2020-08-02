@@ -11,8 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "express": "^4.17.1",
-    "mongoose": "^5.9.25"
+    "mongoose": "^5.9.25",
+    "web-push": "^3.4.4"
   },
   "devDependencies": {
     "chai": "^4.2.0",

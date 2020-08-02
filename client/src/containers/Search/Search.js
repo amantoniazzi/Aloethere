@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PlantList from '../../components/PlantList/PlantList';
 import Filter from '../../components/Filter/Filter';
-import SearchBar from '../../components/SearchBar/SearchBar';
 import './Search.css';
 
 function Search({ plants, filterPlants, shouldWater, emptyFilter }) {

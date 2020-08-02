@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import history from '../../history';
-import { IoIosLeaf } from "react-icons/io";
 import { GiDandelionFlower } from "react-icons/gi";
 import greenImg from '../../assets/greenHomepagenarrow.png';
 import yellowImg from '../../assets/yellowHomepagenarrow.png';

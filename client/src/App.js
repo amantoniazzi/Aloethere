@@ -83,6 +83,7 @@ function App() {
         if (myPlant._id !== id) {
           return myPlant;
         }
+    //else return null? or {}?
       })
       setMyPlants(newPlants);
     })

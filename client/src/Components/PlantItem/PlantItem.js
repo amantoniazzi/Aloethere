@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
 import history from '../../history';
-import { IoIosPartlySunny, IoMdSunny, IoIosWater, IoMdSnow, IoMdAddCircleOutline, IoIosHeartEmpty } from "react-icons/io";
+import {  IoIosHeartEmpty } from "react-icons/io";
 import './PlantItem.css'
 
 function PlantItem({ plant }) {
