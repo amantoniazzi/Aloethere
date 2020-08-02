@@ -11,6 +11,48 @@ function Filter({ plants, filterPlants, shouldWater }) {
   const [water, setWater] = useState('');
   const [humidity, setHumidity] = useState('');
   const [airPurifying, setAirPurifying] = useState('');
+  const [selectedDifficulty, setSelectedDifficulty] = useState(0);
+  const [selectedLight, setSelectedLight] = useState(0);
+  const [selectedWater, setSelectedWater] = useState(0);
+  const [selectedHumidity, setSelectedHumidity] = useState(0);
+  const [selectedAir, setSelectedAir] = useState(0);
+
+
+  const difficultyIsChecked = (e) => {
+    let radioValue = e.target.value;
+    console.log(radioValue)
+    if (radioValue === 'Low') setSelectedDifficulty(1);
+    if (radioValue === 'Medium') setSelectedDifficulty(2);
+    if (radioValue === 'High') setSelectedDifficulty(3)
+
+  }
+
+  const lightIsChecked = (e) => {
+    let radioValue = e.target.value;
+    console.log(radioValue)
+    if (radioValue === 'Low') setSelectedLight(1);
+    if (radioValue === 'Medium') setSelectedLight(2);
+    if (radioValue === 'High') setSelectedLight(3)
+
+  }
+
+  const waterIsChecked = (e) => {
+    let radioValue = e.target.value;
+    console.log(radioValue)
+    if (radioValue === '30 days') setSelectedWater(1);
+    if (radioValue === '14 days') setSelectedWater(2);
+    if (radioValue === '7 days') setSelectedWater(3)
+
+  }
+
+  const humidityIsChecked = (e) => {
+    let radioValue = e.target.value;
+    console.log(radioValue)
+    if (radioValue === 'Low') setSelectedHumidity(1);
+    if (radioValue === 'Medium') setSelectedHumidity(2);
+    if (radioValue === 'High') setSelectedHumidity(3)
+
+  }
 
 
   const handleSubmit = (e) => {
@@ -62,20 +104,26 @@ function Filter({ plants, filterPlants, shouldWater }) {
       }
       <h3 className="form_subtitle">Are you an expert plant parent?</h3>
       <div onChange={handleDifficulty}>
-        <label>
-          <input type="radio" name="difficulty" value="Low" />
+        <label >
+          <input
+            type="radio"
+            name="difficulty"
+            id="1"
+            className={(selectedDifficulty >= 1) ? "selected" : "unselected"}
+            value="Low"
+            onChange={difficultyIsChecked} />
           <div className="icon">
             <IoIosStar size={25} />
           </div>
         </label>
         <label>
-          <input type="radio" name="difficulty" value="Medium" />
+          <input type="radio" name="difficulty" id="2" value="Medium" onChange={difficultyIsChecked} className={(selectedDifficulty >= 2) ? "selected" : "unselected"} />
           <div className="icon">
             <IoIosStar size={25} />
           </div>
         </label>
         <label>
-          <input type="radio" name="difficulty" value="High" />
+          <input type="radio" name="difficulty" id="3" value="High" onChange={difficultyIsChecked} className={(selectedDifficulty >= 3) ? "selected" : "unselected"} />
           <div className="icon">
             <IoIosStar size={25} />
           </div>
@@ -85,19 +133,19 @@ function Filter({ plants, filterPlants, shouldWater }) {
       <h3 className="form_subtitle">Will you water it frequently?</h3>
       <div onChange={handleWater}>
         <label>
-          <input type="radio" id="water1" value="30 days" />
+          <input type="radio" name="water" value="30 days" onChange={waterIsChecked} className={(selectedWater >= 1) ? "selected" : "unselected"} />
           <div className="icon">
             <IoIosWater size={25} />
           </div>
         </label>
         <label>
-          <input type="radio" name="water" value="14 days" />
+          <input type="radio" name="water" value="14 days" onChange={waterIsChecked} className={(selectedWater >= 2) ? "selected" : "unselected"} />
           <div className="icon">
             <IoIosWater size={25} />
           </div>
         </label>
         <label>
-          <input type="radio" name="water" value="7 days" />
+          <input type="radio" name="water" value="7 days" onChange={waterIsChecked} className={(selectedWater >= 3) ? "selected" : "unselected"} />
           <div className="icon">
             <IoIosWater size={25} />
           </div>
@@ -107,19 +155,19 @@ function Filter({ plants, filterPlants, shouldWater }) {
       <h3 className="form_subtitle">How much light does your room have?</h3>
       <div onChange={handleLight}>
         <label>
-          <input type="radio" name="light" value="Low" />
+          <input type="radio" name="light" value="Low" onChange={lightIsChecked} className={(selectedLight >= 1) ? "selected" : "unselected"} />
           <div className="icon">
             <IoMdSunny size={25} />
           </div>
         </label>
         <label>
-          <input type="radio" name="light" value="Medium" />
+          <input type="radio" name="light" value="Medium" onChange={lightIsChecked} className={(selectedLight >= 2) ? "selected" : "unselected"} />
           <div className="icon">
             <IoMdSunny size={25} />
           </div>
         </label>
         <label>
-          <input type="radio" name="light" value="High" />
+          <input type="radio" name="light" value="High" onChange={lightIsChecked} className={(selectedLight >= 3) ? "selected" : "unselected"} />
           <div className="icon">
             <IoMdSunny size={25} />
           </div>
@@ -129,19 +177,19 @@ function Filter({ plants, filterPlants, shouldWater }) {
       <h3 className="form_subtitle">How much humidity?</h3>
       <div onChange={handleHumidity}>
         <label>
-          <input type="radio" name="humidity" value="Low" />
+          <input type="radio" name="humidity" value="Low" onChange={humidityIsChecked} className={(selectedHumidity >= 1) ? "selected" : "unselected"} />
           <div className="icon">
             <IoIosThermometer size={25} />
           </div>
         </label>
         <label>
-          <input type="radio" name="humidity" value="Medium" />
+          <input type="radio" name="humidity" value="Medium" onChange={humidityIsChecked} className={(selectedHumidity >= 2) ? "selected" : "unselected"} />
           <div className="icon">
             <IoIosThermometer size={25} />
           </div>
         </label>
         <label>
-          <input type="radio" name="humidity" value="High" />
+          <input type="radio" name="humidity" value="High" onChange={humidityIsChecked} className={(selectedHumidity >= 3) ? "selected" : "unselected"} />
           <div className="icon">
             <IoIosThermometer size={25} />
           </div>

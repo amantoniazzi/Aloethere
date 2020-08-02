@@ -67,3 +67,13 @@
   background: #F9A826;
   color: black;
 }
+
+.button_water_green:active {
+  transform: scale(0.99);
+  background: #00695A;
+}
+
+.button_water_yellow:active {
+  transform: scale(0.99);
+  background: #BD7F1B;
+}
