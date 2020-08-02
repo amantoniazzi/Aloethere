@@ -5,7 +5,7 @@ function MyPlantList({ myPlants, updateMyPlant, getMyPlants, updatePlantStatus, 
   return (
     <div className="list">
       {myPlants
-        .sort((a, b) => new Date(a.date) - new Date(b.date))
+        .sort((a, b) => new Date(a.lastWatered) - new Date(b.lastWatered))
         .map(myPlant =>
           <MyPlantItem
             key={myPlant._id}
