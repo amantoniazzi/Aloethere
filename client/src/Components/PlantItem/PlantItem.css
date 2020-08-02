@@ -1,9 +1,10 @@
 .plantcard {
-  background-color: #00BFA6;
+  background-color: white;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex: 0 0 250px;
   margin: 5vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .plantcard_img {
@@ -11,7 +12,6 @@
 }
 
 .plantcard_img>img {
-  border-radius: 50%;
   width: 100%;
 }
 

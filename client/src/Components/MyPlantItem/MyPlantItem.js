@@ -25,12 +25,14 @@ function MyPlantItem({ myPlant, updateMyPlant, shouldWater }) {
   }
 
   const displayDifference = (nextWatering) => {
+    const difference = getDifference(nextWatering);
+    const notNegative = Math.abs(difference);
     if (getDifference(nextWatering) >= 0) {
       if (getDifference(nextWatering) === 0) return 'Water me today!';
       return `Water me in ${getDifference(nextWatering)} days`;
     } else if (getDifference(nextWatering) < 0) {
-      if (getDifference(nextWatering) === -1) return `You are ${getDifference(nextWatering)} day late`;
-      return `You are ${getDifference(nextWatering)} days late`;
+      if (getDifference(nextWatering) === -1) return `You are ${notNegative} day late`;
+      return `You are ${notNegative} days late`;
     }
   }
 

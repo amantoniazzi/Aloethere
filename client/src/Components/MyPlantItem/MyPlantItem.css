@@ -1,13 +1,12 @@
-/* #00BFA6 */
-
 .myplantcard {
-  background-color: #CDD0D0;
+  background-color: white;
   display: flex;
   flex-direction: row;
   flex: 0 0 350px;
   margin: 5%;
   box-sizing: border-box;
   padding: 3%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .myplantcard_img {
