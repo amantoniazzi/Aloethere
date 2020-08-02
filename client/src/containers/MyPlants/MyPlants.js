@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import MyPlantList from '../../components/MyPlantList/MyPlantList';
 import './MyPlants.css';
 
-function MyPlants({ myPlants, getMyPlants, updateMyPlant, updatePlantStatus, shouldWater }) {
+function MyPlants({ myPlants, getMyPlants, updateMyPlant, updatePlantStatus, shouldWater, deleteMyPlant }) {
   useEffect(() => {
     getMyPlants();
   }, [])
@@ -17,6 +17,7 @@ function MyPlants({ myPlants, getMyPlants, updateMyPlant, updatePlantStatus, sho
         getMyPlants={getMyPlants}
         updatePlantStatus={updatePlantStatus}
         shouldWater={shouldWater}
+        deleteMyPlant={deleteMyPlant}
       />
     </div>
   )

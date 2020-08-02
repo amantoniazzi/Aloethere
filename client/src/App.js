@@ -57,6 +57,10 @@ function App() {
     setPlants([]);
   };
 
+  const deleteMyPlant = (id) => {
+    ApiService.deleteMyPlant(id);
+  }
+
   return (
     <Router history={history}>
       <div className="App">
@@ -102,6 +106,7 @@ function App() {
               shouldWater={shouldWater}
               getMyPlants={getMyPlants}
               updateMyPlant={updateMyPlant}
+              deleteMyPlant={deleteMyPlant}
             />
           </Route>
           <Route path="/addplant">

@@ -33,4 +33,10 @@ function editMyPlant(data) {
     .then(response => response.json())
 }
 
-export default { getPlants, getMyPlants, postMyPlant, getFilterPlants, editMyPlant }
+function deleteMyPlant(id) {
+  return fetch(`${BASE_URL}/myplants/${id}`, {
+    method: 'DELETE',
+  })
+}
+
+export default { getPlants, getMyPlants, postMyPlant, getFilterPlants, editMyPlant, deleteMyPlant }

@@ -3,7 +3,7 @@ import moment from 'moment';
 import { GiWateringCan } from "react-icons/gi";
 import './MyPlantItem.css'
 
-function MyPlantItem({ myPlant, updateMyPlant, shouldWater }) {
+function MyPlantItem({ myPlant, updateMyPlant, shouldWater, deleteMyPlant }) {
 
   const getInterval = (myPlant) => {
     return myPlant.plantInfo.water.split(" ")[0];
@@ -42,9 +42,14 @@ function MyPlantItem({ myPlant, updateMyPlant, shouldWater }) {
     updateMyPlant(id, currentDate);
   }
 
+  const handleDeleteClick = () => {
+    deleteMyPlant(myPlant._id)
+  }
+
   return (
 
     <div className="myplantcard">
+      <button type="button" className="delete_button" onClick={handleDeleteClick}>X</button>
       <div className="myplantcard_img">
         <img src={require('../../assets/' + myPlant.plantInfo._id + '.jpg')} alt={myPlant.commonName} />
       </div>
