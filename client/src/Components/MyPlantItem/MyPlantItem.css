@@ -55,7 +55,7 @@
 }
 
 .button_water_green {
-  width: 120px;
+  width: 150px;
   margin: 0px;
   background: #00BFA6;
   color: black;
@@ -63,7 +63,7 @@
 
 .button_water_yellow {
   margin: 0px;
-  width: 120px;
+  width: 150px;
   background: #F9A826;
   color: black;
 }
@@ -76,4 +76,9 @@
 .button_water_yellow:active {
   transform: scale(0.99);
   background: #BD7F1B;
+}
+
+.button_water_text {
+  font-size: 17px;
+  font-weight: bold;
 }

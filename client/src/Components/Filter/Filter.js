@@ -15,7 +15,6 @@ function Filter({ plants, filterPlants, shouldWater }) {
   const [selectedLight, setSelectedLight] = useState(0);
   const [selectedWater, setSelectedWater] = useState(0);
   const [selectedHumidity, setSelectedHumidity] = useState(0);
-  const [selectedAir, setSelectedAir] = useState(0);
 
 
   const difficultyIsChecked = (e) => {
@@ -219,7 +218,7 @@ function Filter({ plants, filterPlants, shouldWater }) {
           </div>
           Hanging plants</label><br />
       </div>
-      <h3 className="form_subtitle">Are you looking for an airpurifying plant?</h3>
+      <h3 className="form_subtitle">Do you want an airpurifying plant?</h3>
       <div onChange={handleAirPurifying} >
         <label>
           <input type="radio" id="air" name="air" value="true" />

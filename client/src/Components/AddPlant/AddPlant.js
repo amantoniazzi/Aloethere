@@ -7,7 +7,7 @@ function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-function AddPlant({ myPlants, createMyPlant }) {
+function AddPlant({ myPlants, createMyPlant, shouldWater }) {
 
   const [nickName, setNickName] = useState('');
   const [bought, setBought] = useState('');
@@ -45,15 +45,22 @@ function AddPlant({ myPlants, createMyPlant }) {
 
   return (
     <form className="plant_form" onSubmit={handleSubmit}>
-      <h2>3 last questions 🌿</h2>
+      <h2>Last 3 questions ...</h2>
+      {(!shouldWater) ?
+        <hr className="hr_green" />
+        : <hr className="hr_yellow" />
+      }
       <h3 className="form_subtitle">What's their name?</h3>
       <p className="subtitle_desc">Every plant needs a name to feel loved!</p>
       <input type="text" name={nickName} value={nickName} onChange={handleNickName} placeholder="type name here" />
       <h3 className="form_subtitle">When did you adopt them?</h3>
-      <input type="datetime-local" name={bought} value={bought} onChange={handleBought} />
+      <input type="date" name={bought} value={bought} onChange={handleBought} />
       <h3 className="form_subtitle">When did you last water them?</h3>
       <input type="datetime-local" name={lastWatered} value={lastWatered} onChange={handleLastWatered} /><br />
-      <button className="form_btn" type="submit">Add my new plant</button>
+      {(!shouldWater) ?
+        <button className="form_btn_green" type="submit">Add my new plant</button>
+        : <button className="form_btn_yellow" type="submit">Add my new plant</button>
+      }
     </form>
 
   )

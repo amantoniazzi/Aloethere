@@ -5,7 +5,13 @@
   flex-direction: row;
 }
 
+.plantlist_title {
+  flex-basis: 100%;
+  text-align: center;
+  margin: 0px;
+}
+
 .clear_button_yellow {
   flex-basis: 100%;
-  margin: 5% 20%;
+  margin: 5% 20% 20% 20%;
 }

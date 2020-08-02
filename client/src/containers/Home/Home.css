@@ -1,5 +1,5 @@
 .Home {
-  margin-top: 9%;
+  margin-top: 2%;
 }
 
 .home_green, .home_yellow {
@@ -9,7 +9,7 @@
 }
 
 .home_title_green {
-  padding-top: 5%;
+  padding-top: 0px;
   color: #00BFA6;
   vertical-align: middle;
   margin-bottom: 2px;
@@ -18,7 +18,7 @@
 }
 
 .home_title_yellow {
-  padding-top: 5%;
+  padding-top: 0px;
   color: #F9A826;
   margin-bottom: 2px;
   padding-bottom: 0px;
@@ -30,7 +30,7 @@
 }
 
 .home_subtitle {
-  padding: 2%;
+  padding: 1%;
   margin-top: 0px;
   margin-bottom: 0px;
   text-align: center;

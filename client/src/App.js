@@ -16,16 +16,26 @@ function App() {
   const [myPlants, setMyPlants] = useState([]);
   const [shouldWater, setShouldWater] = useState(false);
 
-  useEffect(() => {
-    const shouldIWater = myPlants.some(myPlant => {
+  const shouldIWater = () => {
+    return myPlants.some(myPlant => {
       const interval = myPlant.plantInfo.water.split(" ")[0];
       const new_date = moment(myPlant.lastWatered).add(interval, 'days');
       const current = moment();
       const diff = new_date.diff(current, 'days') + 1;
-      if (diff < 0) return true;
+      return (diff < 0) ? true : false;
     })
-    setShouldWater(shouldIWater);
+  }
+
+  useEffect(() => {
+    getMyPlants();
+    setShouldWater(shouldIWater());
+  }, [])
+
+  useEffect(() => {
+    setShouldWater(shouldIWater());
   }, [myPlants])
+
+
 
   const getMyPlants = () => {
     ApiService.getMyPlants()
@@ -44,13 +54,22 @@ function App() {
     ApiService.getFilterPlants(difficulty, type, light, water, humidity, airPurifying)
       .then(data => {
         if (data) setPlants(data);
-        console.log(data);
       });
   }
 
   const updateMyPlant = (id, lastWatered) => {
     let data = { id, lastWatered };
-    ApiService.editMyPlant(data);
+    ApiService.editMyPlant(data)
+      .then(() => {
+        const newPlants = myPlants.map((myPlant) => {
+          if (myPlant._id === id) {
+            return { ...myPlant, lastWatered };
+          }
+          return myPlant;
+        })
+        setMyPlants(newPlants);
+      })
+
   }
 
   const emptyFilter = () => {
@@ -58,7 +77,15 @@ function App() {
   };
 
   const deleteMyPlant = (id) => {
-    ApiService.deleteMyPlant(id);
+    ApiService.deleteMyPlant(id)
+    .then(() => {
+      const newPlants = myPlants.filter((myPlant) => {
+        if (myPlant._id !== id) {
+          return myPlant;
+        }
+      })
+      setMyPlants(newPlants);
+    })
   }
 
   return (
@@ -110,7 +137,7 @@ function App() {
             />
           </Route>
           <Route path="/addplant">
-            <AddPlant createMyPlant={createMyPlant} />
+            <AddPlant createMyPlant={createMyPlant} shouldWater={shouldWater} />
           </Route>
           <Route path="/">
             <Home shouldWater={shouldWater} />

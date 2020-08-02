@@ -3,6 +3,7 @@ import MyPlantList from '../../components/MyPlantList/MyPlantList';
 import './MyPlants.css';
 
 function MyPlants({ myPlants, getMyPlants, updateMyPlant, updatePlantStatus, shouldWater, deleteMyPlant }) {
+
   useEffect(() => {
     getMyPlants();
   }, [])

@@ -10,6 +10,7 @@ function PlantList({ plants, label, emptyFilter }) {
 
   return (
     <div className="list" label={label}>
+      <h2 className="plantlist_title">Our finds:</h2>
       {plants.map(plant =>
         <PlantItem key={plant._id} plant={plant} />
       )}
