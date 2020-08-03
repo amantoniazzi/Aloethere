@@ -14,10 +14,6 @@ function MyPlants({
   closeModal
 }) {
 
-  useEffect(() => {
-    getMyPlants();
-  }, [])
-
   return (
     <div className="myplants">
       <h2 className="myplants-title">Welcome back to your plant fam!</h2>

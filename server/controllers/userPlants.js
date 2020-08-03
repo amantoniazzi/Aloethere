@@ -17,8 +17,9 @@ exports.getUserPlants = async (req, res) => {
 exports.postUserPlant = async (req, res) => {
   try {
     const plant = await createUserPlant(req);
+    const newplant = await getUserPlantById(plant._id)
     res.status(201);
-    res.json(plant);
+    res.json(newplant);
   } catch (error) {
     console.error(error); //eslint-disable-line
     res.sendStatus(500);

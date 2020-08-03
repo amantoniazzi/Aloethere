@@ -50,7 +50,12 @@ function App() {
   const createMyPlant = (nickName, bought, lastWatered, commonName, id) => {
     let data = { nickName, bought, lastWatered, commonName, id };
     ApiService.postMyPlant(data)
+      .then((newPlant) => {
+        const newPlants = [...myPlants, newPlant]
+        setMyPlants(newPlants);
+      })
   }
+
 
   const filterPlants = (difficulty, type, light, water, humidity, airPurifying) => {
     ApiService.getFilterPlants(difficulty, type, light, water, humidity, airPurifying)

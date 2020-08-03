@@ -24,12 +24,11 @@ async function createUserPlant(req) {
     bought: req.body.bought,
     plantInfo: req.body.id
   })
-    .populate({ path: 'plantInfo' })
 }
 
 async function getUserPlantById(id) {
   return await UserPlants.findOne({ _id: id })
-    .populate("plant_info")
+    .populate({ path: 'plantInfo' })
 }
 
 async function deleteUserPlantById(id) {
