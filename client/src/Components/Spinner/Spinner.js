@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { css } from "@emotion/core";
 import PulseLoader from "react-spinners/PulseLoader";
 
@@ -12,7 +12,6 @@ const override = css`
 `;
 
 function Spinner() {
-
   return (
     <div className="sweet-loading">
       <PulseLoader

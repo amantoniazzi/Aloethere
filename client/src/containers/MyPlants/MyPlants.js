@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import MyPlantList from '../../components/MyPlantList/MyPlantList';
 import './MyPlants.css';
 

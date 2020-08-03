@@ -27,17 +27,5 @@ nav {
 
 .navbar_li a {
   text-decoration: none;
-  color: black;
-}
-
-.navbar_icon_green, .navbar_icon_yellow {
   color: #CDD0D0
-}
-
-.navbar_icon_green:hover {
-  color: #00BFA6;
-}
-
-.navbar_icon_yellow:hover {
-  color: #F9A826;
 }

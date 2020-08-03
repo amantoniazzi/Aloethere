@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Router, Switch, Route, Link } from "react-router-dom";
+import { Router, Switch, Route, NavLink } from "react-router-dom";
 import { IoIosHome, IoIosLeaf, IoIosAddCircleOutline } from "react-icons/io";
 import ApiService from './services/ApiService';
 import usePushNotifications from "./usePushNotifications";
@@ -110,26 +110,19 @@ function App() {
         <nav className="App_nav">
           <ul className="App_navbar">
             <li className="navbar_li">
-              <Link to="/">
-                {(!shouldWater) ?
-                  <div className="navbar_icon_green"><IoIosHome size={32} /></div>
-                  : <div className="navbar_icon_yellow"><IoIosHome size={32} /></div>
-                }
-              </Link>
+              <NavLink exact to="/" activeStyle={(!shouldWater) ? { color: '#00BFA6' } : { color: '#F9A826' }}>
+                <IoIosHome size={32} />
+              </NavLink>
             </li>
             <li className="navbar_li">
-              <Link to="/plants">
-                {(!shouldWater) ? <div className="navbar_icon_green"><IoIosAddCircleOutline size={32} /></div>
-                  : <div className="navbar_icon_yellow"><IoIosAddCircleOutline size={32} /></div>
-                }
-              </Link>
+              <NavLink exact to="/plants" activeStyle={(!shouldWater) ? { color: '#00BFA6' } : { color: '#F9A826' }}>
+                <IoIosAddCircleOutline size={32} />
+              </NavLink>
             </li>
             <li className="navbar_li">
-              <Link to="/myplants">
-                {(!shouldWater) ? <div className="navbar_icon_green"><IoIosLeaf size={32} /></div>
-                  : <div className="navbar_icon_yellow"><IoIosLeaf size={32} /></div>
-                }
-              </Link>
+              <NavLink exact to="/myplants" activeStyle={(!shouldWater) ? { color: '#00BFA6' } : { color: '#F9A826' }}>
+                <IoIosLeaf size={32} />
+              </NavLink>
             </li>
           </ul>
         </nav>
