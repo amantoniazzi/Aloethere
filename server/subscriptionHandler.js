@@ -33,8 +33,8 @@ function sendPushNotification(req, res) {
         title: "HEY! Your plants need you!",
         text: "Check their watering schedule",
         tag: "new-product",
-        // image: "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg",
-        // url: "/new-product-jason-leung-HM6TMmevbZQ-unsplash.html"
+        image: "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg",
+        url: "/myplants"
       })
     )
     .catch(err => {

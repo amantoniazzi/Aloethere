@@ -18,8 +18,8 @@ async function askUserPermission() {
  */
 function sendNotification() {
   const img = "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg";
-  const text = "Take a look at this brand new t-shirt!";
-  const title = "New Product Available";
+  const text = "Check the watering schedule";
+  const title = "HEY! Your plants need you";
   const options = {
     body: text,
     icon: "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg",
@@ -29,7 +29,7 @@ function sendNotification() {
     badge: "https://spyna.it/icons/android-icon-192x192.png",
     actions: [{ action: "Detail", title: "View", icon: "https://via.placeholder.com/128/ff0000" }]
   };
-  navigator.serviceWorker.ready.then(function(serviceWorker) {
+  navigator.serviceWorker.ready.then(function (serviceWorker) {
     serviceWorker.showNotification(title, options);
   });
 }
@@ -62,10 +62,10 @@ async function createNotificationSubscription() {
 function getUserSubscription() {
   //wait for service worker installation to be ready, and then
   return navigator.serviceWorker.ready
-    .then(function(serviceWorker) {
+    .then(function (serviceWorker) {
       return serviceWorker.pushManager.getSubscription();
     })
-    .then(function(pushSubscription) {
+    .then(function (pushSubscription) {
       return pushSubscription;
     });
 }
