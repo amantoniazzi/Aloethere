@@ -8,7 +8,6 @@ import Home from './containers/Home/Home';
 import Search from './containers/Search/Search';
 import MyPlants from './containers/MyPlants/MyPlants';
 import AddPlant from './components/AddPlant/AddPlant';
-import Notifications from './components/Notifications';
 import history from './history';
 import './App.css';
 
@@ -145,7 +144,6 @@ function App() {
             <AddPlant createMyPlant={createMyPlant} shouldWater={shouldWater} />
           </Route>
           <Route path="/notifications">
-            <Notifications />
           </Route>
           <Route path="/">
             <Home shouldWater={shouldWater} />
