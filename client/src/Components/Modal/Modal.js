@@ -9,11 +9,10 @@ function DeleteModal({ myPlant, deleteMyPlant, modalIsOpen, openModal, closeModa
       right: 'auto',
       bottom: 'auto',
       marginRight: '-50%',
-      transform: 'translate(-50%, -50%)'
+      transform: 'translate(-50%, -50%)',
+      textAlign: 'center'
     }
   };
-
-  // Make sure to bind modal to your appElement
 
   useEffect(() => {
     Modal.setAppElement('body');
@@ -22,7 +21,6 @@ function DeleteModal({ myPlant, deleteMyPlant, modalIsOpen, openModal, closeModa
   const handleDeleteClick = () => {
     deleteMyPlant(myPlant._id)
     closeModal();
-
   }
 
   return (
