@@ -7,6 +7,7 @@ import Home from './containers/Home/Home';
 import Search from './containers/Search/Search';
 import MyPlants from './containers/MyPlants/MyPlants';
 import AddPlant from './components/AddPlant/AddPlant';
+import Notifications from './components/Notifications';
 import history from './history';
 import './App.css';
 
@@ -78,15 +79,15 @@ function App() {
 
   const deleteMyPlant = (id) => {
     ApiService.deleteMyPlant(id)
-    .then(() => {
-      const newPlants = myPlants.filter((myPlant) => {
-        if (myPlant._id !== id) {
-          return myPlant;
-        }
-    //else return null? or {}?
+      .then(() => {
+        const newPlants = myPlants.filter((myPlant) => {
+          if (myPlant._id !== id) {
+            return myPlant;
+          }
+          //else return null? or {}?
+        })
+        setMyPlants(newPlants);
       })
-      setMyPlants(newPlants);
-    })
   }
 
   return (
@@ -139,6 +140,9 @@ function App() {
           </Route>
           <Route path="/addplant">
             <AddPlant createMyPlant={createMyPlant} shouldWater={shouldWater} />
+          </Route>
+          <Route path="/notifications">
+            <Notifications />
           </Route>
           <Route path="/">
             <Home shouldWater={shouldWater} />

@@ -16,15 +16,3 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.register();
-
-function isPushNotificationSupported() {
-  return "serviceWorker" in navigator && "PushManager" in window;
-}
-
-function registerServiceWorker() {
-  return navigator.serviceWorker.register("/sw.js");
-}
-
-async function askUserPermission() {
-  return await Notification.requestPermission();
-}

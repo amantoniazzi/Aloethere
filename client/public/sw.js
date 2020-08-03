@@ -1,6 +1,4 @@
 
-
-
 async function createNotificationSubscription() {
   //wait for service worker installation to be ready
   const serviceWorker = await navigator.serviceWorker.ready;
@@ -37,11 +35,11 @@ function receivePushNotification(event) {
   };
   event.waitUntil(self.registration.showNotification(title, options));
 }
-self.addEventListener("push", receivePushNotification);
 
 function openPushNotification(event) {
   console.log("Notification click Received.", event.notification.data);
   event.notification.close();
   //do something
 }
+self.addEventListener("push", receivePushNotification);
 self.addEventListener("notificationclick", openPushNotification);
