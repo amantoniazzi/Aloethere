@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Router, Switch, Route, Link } from "react-router-dom";
-import { IoIosHome, IoIosLeaf, IoIosSearch } from "react-icons/io";
+import { IoIosHome, IoIosLeaf, IoIosAddCircleOutline } from "react-icons/io";
 import ApiService from './services/ApiService';
 import usePushNotifications from "./usePushNotifications";
 import moment from 'moment';
@@ -107,8 +107,8 @@ function App() {
             </li>
             <li className="navbar_li">
               <Link to="/plants">
-                {(!shouldWater) ? <div className="navbar_icon_green"><IoIosSearch size={32} /></div>
-                  : <div className="navbar_icon_yellow"><IoIosSearch size={32} /></div>
+                {(!shouldWater) ? <div className="navbar_icon_green"><IoIosAddCircleOutline size={32} /></div>
+                  : <div className="navbar_icon_yellow"><IoIosAddCircleOutline size={32} /></div>
                 }
               </Link>
             </li>

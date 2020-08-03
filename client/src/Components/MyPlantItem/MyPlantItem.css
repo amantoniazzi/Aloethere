@@ -1,3 +1,9 @@
+.mylist {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .myplantcard {
   background-color: white;
   display: flex;
@@ -8,6 +14,10 @@
   padding: 3%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: relative;
+}
+
+.delay {
+  border-bottom: 3px solid #F50057;
 }
 
 .delete_button {
@@ -68,6 +78,13 @@
   color: black;
 }
 
+.button_water_red {
+  margin: 0px;
+  width: 150px;
+  background: #F50057;
+  color: black;
+}
+
 .button_water_green:active {
   transform: scale(0.99);
   background: #00695A;
@@ -76,6 +93,11 @@
 .button_water_yellow:active {
   transform: scale(0.99);
   background: #BD7F1B;
+}
+
+.button_water_red:active {
+  transform: scale(0.99);
+  background: #C10346;
 }
 
 .button_water_text {

@@ -47,22 +47,44 @@ function MyPlantItem({ myPlant, updateMyPlant, shouldWater, deleteMyPlant }) {
   }
 
   return (
+    <div className="mylist">
+      {(getDifference(nextWatering) >= 0) ?
+        <div className="myplantcard">
+          <button type="button" className="delete_button" onClick={handleDeleteClick}>X</button>
+          <div className="myplantcard_img">
+            <img src={require('../../assets/' + myPlant.plantInfo._id + '.jpg')} alt={myPlant.commonName} />
+          </div>
+          <div className="myplantcard-info">
+            <h2 className="myplantcard-title">{myPlant.nickName}</h2>
+            <h4 className="myplantcard-type">{myPlant.plantInfo.commonName}</h4>
+            <h4 className="myplantcard-water">{displayDifference(nextWatering)}</h4>
 
-    <div className="myplantcard">
-      <button type="button" className="delete_button" onClick={handleDeleteClick}>X</button>
-      <div className="myplantcard_img">
-        <img src={require('../../assets/' + myPlant.plantInfo._id + '.jpg')} alt={myPlant.commonName} />
-      </div>
-      <div className="myplantcard-info">
-        <h2 className="myplantcard-title">{myPlant.nickName}</h2>
-        <h4 className="myplantcard-type">{myPlant.plantInfo.commonName}</h4>
-        <h4 className="myplantcard-water">{displayDifference(nextWatering)}</h4>
-        {(!shouldWater) ?
-          <button type="button" className="button_water_green" onClick={handleClick}><GiWateringCan size={22} style={{ verticalAlign: 'baseline' }} /><span className="button_water_text"> Just done!</span></button>
-          : <button type="button" className="button_water_yellow" onClick={handleClick}><GiWateringCan size={22} style={{ verticalAlign: 'baseline' }} /><span className="button_water_text"> Just done!</span></button>
-        }
-      </div>
+            {(!shouldWater) ?
+              <button type="button" className="button_water_green" onClick={handleClick}><GiWateringCan size={22} style={{ verticalAlign: 'baseline' }} />
+                <span className="button_water_text"> Watered!</span>
+              </button>
+              : <button type="button" className="button_water_yellow" onClick={handleClick}><GiWateringCan size={22} style={{ verticalAlign: 'baseline' }} />
+                <span className="button_water_text"> Watered!</span>
+              </button>
+            }
+          </div>
+        </div>
+        : <div className="myplantcard">
+          <button type="button" className="delete_button" onClick={handleDeleteClick}>X</button>
+          <div className="myplantcard_img">
+            <img src={require('../../assets/' + myPlant.plantInfo._id + '.jpg')} alt={myPlant.commonName} />
+          </div>
+          <div className="myplantcard-info">
+            <h2 className="myplantcard-title">{myPlant.nickName}</h2>
+            <h4 className="myplantcard-type">{myPlant.plantInfo.commonName}</h4>
+            <h4 className="myplantcard-water delay">{displayDifference(nextWatering)}</h4>
 
+            <button type="button" className="button_water_red" onClick={handleClick}><GiWateringCan size={22} style={{ verticalAlign: 'baseline' }} />
+              <span className="button_water_text"> Watered!</span>
+            </button>
+          </div>
+        </div>
+      }
     </div>
   )
 
