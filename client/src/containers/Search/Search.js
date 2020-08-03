@@ -19,6 +19,7 @@ function Search({ plants, filterPlants, shouldWater, emptyFilter }) {
           plants={plants}
           label={'Plants'}
           emptyFilter={emptyFilter}
+          shouldWater={shouldWater}
         />
       </div>
     </div>

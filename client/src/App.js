@@ -42,10 +42,8 @@ function App() {
   }, [myPlants])
 
   const getMyPlants = () => {
-    console.log('here')
     ApiService.getMyPlants()
       .then(data => {
-        console.log('got data', data);
         setMyPlants(data);
       });
   }

@@ -1,13 +1,28 @@
-.plant_form {
-  margin-top: 0px;
+.add_plant_form {
+  text-align: center;
+  margin-top: 10%;
 }
 
 .form_subtitle {
   margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-size: 20px;
 }
 
 .subtitle_desc {
-  font-size: 10px;
+  font-size: 15px;
   margin: 0;
   padding-bottom: 10px;
+}
+
+.form_input {
+  margin: 5px 0;
+}
+
+input:last-child {
+  padding-bottom: 15px;
+}
+
+.form_btn_green, .form_btn_yellow {
+  margin-top: 20px;
 }

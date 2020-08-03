@@ -38,6 +38,7 @@ function DeleteModal({ myPlant, deleteMyPlant, modalIsOpen, openModal, closeModa
           <img src={require('../../assets/cancelPlant.png')} alt="delete a plant" />
         </div>
         <button className="confirmation_button" onClick={handleDeleteClick}>I'm sure</button>
+        <p>{myPlant.nickName}</p>
       </Modal>
     </div>
 

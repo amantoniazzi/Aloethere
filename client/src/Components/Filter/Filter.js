@@ -19,7 +19,7 @@ function Filter({ plants, filterPlants, shouldWater }) {
 
   const difficultyIsChecked = (e) => {
     let radioValue = e.target.value;
-    console.log(radioValue)
+
     if (radioValue === 'Low') setSelectedDifficulty(1);
     if (radioValue === 'Medium') setSelectedDifficulty(2);
     if (radioValue === 'High') setSelectedDifficulty(3)
@@ -28,7 +28,7 @@ function Filter({ plants, filterPlants, shouldWater }) {
 
   const lightIsChecked = (e) => {
     let radioValue = e.target.value;
-    console.log(radioValue)
+
     if (radioValue === 'Low') setSelectedLight(1);
     if (radioValue === 'Medium') setSelectedLight(2);
     if (radioValue === 'High') setSelectedLight(3)
@@ -37,7 +37,7 @@ function Filter({ plants, filterPlants, shouldWater }) {
 
   const waterIsChecked = (e) => {
     let radioValue = e.target.value;
-    console.log(radioValue)
+
     if (radioValue === '30 days') setSelectedWater(1);
     if (radioValue === '14 days') setSelectedWater(2);
     if (radioValue === '7 days') setSelectedWater(3)
@@ -46,7 +46,7 @@ function Filter({ plants, filterPlants, shouldWater }) {
 
   const humidityIsChecked = (e) => {
     let radioValue = e.target.value;
-    console.log(radioValue)
+
     if (radioValue === 'Low') setSelectedHumidity(1);
     if (radioValue === 'Medium') setSelectedHumidity(2);
     if (radioValue === 'High') setSelectedHumidity(3)

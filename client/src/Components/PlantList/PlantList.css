@@ -5,13 +5,31 @@
   flex-direction: row;
 }
 
-.plantlist_title {
-  flex-basis: 100%;
+.plantlist_title_green, .plantlist_title_yellow {
+  flex-basis: 90%;
   text-align: center;
   margin: 0px;
+  padding-bottom: 14px;
+}
+
+.plantlist_title_green {
+  border-bottom: 3px solid #00BFA6;
+}
+
+.plantlist_title_yellow {
+  border-bottom: 3px solid #F9A826;
+}
+
+.clear_button_green, .clear_button_yellow {
+  color: white;
+  flex-basis: 100%;
+  margin: 5% 20% 20% 20%;
+}
+
+.clear_button_green {
+  background-color: #00BFA6;
 }
 
 .clear_button_yellow {
-  flex-basis: 100%;
-  margin: 5% 20% 20% 20%;
+  background-color: #F9A826;
 }
