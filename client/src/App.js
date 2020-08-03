@@ -16,6 +16,7 @@ function App() {
   const [plants, setPlants] = useState([]);
   const [myPlants, setMyPlants] = useState([]);
   const [shouldWater, setShouldWater] = useState(false);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const shouldIWater = () => {
     return myPlants.some(myPlant => {
@@ -27,7 +28,6 @@ function App() {
     })
   }
   usePushNotifications();
-
 
   useEffect(() => {
     getMyPlants();
@@ -85,10 +85,17 @@ function App() {
           if (myPlant._id !== id) {
             return myPlant;
           }
-          //else return null? or {}?
         })
         setMyPlants(newPlants);
       })
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
   }
 
   return (
@@ -137,6 +144,9 @@ function App() {
               getMyPlants={getMyPlants}
               updateMyPlant={updateMyPlant}
               deleteMyPlant={deleteMyPlant}
+              modalIsOpen={modalIsOpen}
+              openModal={openModal}
+              closeModal={closeModal}
             />
           </Route>
           <Route path="/addplant">

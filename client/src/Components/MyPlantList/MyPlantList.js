@@ -1,7 +1,15 @@
 import React from 'react';
 import MyPlantItem from '../MyPlantItem/MyPlantItem';
 
-function MyPlantList({ myPlants, updateMyPlant, getMyPlants, updatePlantStatus, shouldWater, deleteMyPlant }) {
+function MyPlantList({ myPlants,
+  updateMyPlant,
+  getMyPlants,
+  updatePlantStatus,
+  shouldWater,
+  deleteMyPlant,
+  modalIsOpen,
+  openModal,
+  closeModal }) {
   return (
     <div className="list">
       {myPlants
@@ -15,6 +23,9 @@ function MyPlantList({ myPlants, updateMyPlant, getMyPlants, updatePlantStatus, 
             updatePlantStatus={updatePlantStatus}
             shouldWater={shouldWater}
             deleteMyPlant={deleteMyPlant}
+            modalIsOpen={modalIsOpen}
+            openModal={openModal}
+            closeModal={closeModal}
           />
         )}
     </div>

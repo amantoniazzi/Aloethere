@@ -1,9 +1,10 @@
 import React from 'react';
 import moment from 'moment';
 import { GiWateringCan } from "react-icons/gi";
+import DeleteModal from '../Modal/Modal.js'
 import './MyPlantItem.css'
 
-function MyPlantItem({ myPlant, updateMyPlant, shouldWater, deleteMyPlant }) {
+function MyPlantItem({ myPlant, updateMyPlant, shouldWater, deleteMyPlant, modalIsOpen, openModal, closeModal }) {
 
   const getInterval = (myPlant) => {
     return myPlant.plantInfo.water.split(" ")[0];
@@ -42,15 +43,17 @@ function MyPlantItem({ myPlant, updateMyPlant, shouldWater, deleteMyPlant }) {
     updateMyPlant(id, currentDate);
   }
 
-  const handleDeleteClick = () => {
-    deleteMyPlant(myPlant._id)
-  }
-
   return (
     <div className="mylist">
       {(getDifference(nextWatering) >= 0) ?
         <div className="myplantcard">
-          <button type="button" className="delete_button" onClick={handleDeleteClick}>X</button>
+          <button type="button" className="delete_button" onClick={openModal}>x</button>
+          <DeleteModal
+            myPlant={myPlant}
+            deleteMyPlant={deleteMyPlant}
+            modalIsOpen={modalIsOpen}
+            openModal={openModal}
+            closeModal={closeModal} />
           <div className="myplantcard_img">
             <img src={require('../../assets/' + myPlant.plantInfo._id + '.jpg')} alt={myPlant.commonName} />
           </div>
@@ -70,10 +73,16 @@ function MyPlantItem({ myPlant, updateMyPlant, shouldWater, deleteMyPlant }) {
           </div>
         </div>
         : <div className="myplantcard">
-          <button type="button" className="delete_button" onClick={handleDeleteClick}>X</button>
+          <button type="button" className="delete_button" onClick={openModal}>x</button>
           <div className="myplantcard_img">
             <img src={require('../../assets/' + myPlant.plantInfo._id + '.jpg')} alt={myPlant.commonName} />
           </div>
+          <DeleteModal
+            myPlant={myPlant}
+            deleteMyPlant={deleteMyPlant}
+            modalIsOpen={modalIsOpen}
+            openModal={openModal}
+            closeModal={closeModal} />
           <div className="myplantcard-info">
             <h2 className="myplantcard-title">{myPlant.nickName}</h2>
             <h4 className="myplantcard-type">{myPlant.plantInfo.commonName}</h4>

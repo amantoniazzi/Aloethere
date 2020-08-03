@@ -2,7 +2,17 @@ import React, { useEffect } from 'react';
 import MyPlantList from '../../components/MyPlantList/MyPlantList';
 import './MyPlants.css';
 
-function MyPlants({ myPlants, getMyPlants, updateMyPlant, updatePlantStatus, shouldWater, deleteMyPlant }) {
+function MyPlants({
+  myPlants,
+  getMyPlants,
+  updateMyPlant,
+  updatePlantStatus,
+  shouldWater,
+  deleteMyPlant,
+  modalIsOpen,
+  openModal,
+  closeModal
+}) {
 
   useEffect(() => {
     getMyPlants();
@@ -19,6 +29,9 @@ function MyPlants({ myPlants, getMyPlants, updateMyPlant, updatePlantStatus, sho
         updatePlantStatus={updatePlantStatus}
         shouldWater={shouldWater}
         deleteMyPlant={deleteMyPlant}
+        modalIsOpen={modalIsOpen}
+        openModal={openModal}
+        closeModal={closeModal}
       />
     </div>
   )

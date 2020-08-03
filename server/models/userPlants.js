@@ -24,6 +24,7 @@ async function createUserPlant(req) {
     bought: req.body.bought,
     plantInfo: req.body.id
   })
+    .populate({ path: 'plantInfo' })
 }
 
 async function getUserPlantById(id) {
