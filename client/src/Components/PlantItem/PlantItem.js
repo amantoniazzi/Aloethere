@@ -19,25 +19,6 @@ function PlantItem({ plant }) {
         <h2 className="plantcard-title">{plant.commonName}</h2>
         <h4 className="plantcard-scientific">{plant.scientificName}</h4>
       </div>
-      {/* <div className="plantcard-icons">
-        <div className="info-light">
-          {props.plant.light === 'any' ? <IoIosPartlySunny />
-            : props.plant.light === 'medium' ? <IoMdSunny />
-              : <div><IoMdSunny /><IoMdSunny /></div>
-          }
-        </div>
-        <div className="info-water">
-          {props.plant.water === 'two weeks' ? <IoIosWater />
-            : props.plant.water === 'weekly' ? <div><IoIosWater /><IoIosWater /></div>
-              : <div><IoIosWater /><IoIosWater /><IoIosWater /></div>
-          }
-        </div>
-        <div className="info-air">
-          {!props.plant.air_purifying ? null
-            : <IoMdSnow/>         
-          }
-        </div>
-      </div> */}
       <button className="add_button_yellow" type="button" onClick={() => history.push(url)}>
         <IoIosHeartEmpty style={{ verticalAlign: 'baseline' }} size={18} />
         <span className="add_button_text">  Add me</span>

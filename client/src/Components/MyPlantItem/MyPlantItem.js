@@ -61,15 +61,10 @@ function MyPlantItem({ myPlant, updateMyPlant, shouldWater, deleteMyPlant, modal
             <h2 className="myplantcard-title">{myPlant.nickName}</h2>
             <h4 className="myplantcard-type">{myPlant.plantInfo.commonName}</h4>
             <h4 className="myplantcard-water">{displayDifference(nextWatering)}</h4>
-
-            {(!shouldWater) ?
-              <button type="button" className="button_water_green" onClick={handleClick}><GiWateringCan size={22} style={{ verticalAlign: 'baseline' }} />
-                <span className="button_water_text"> Watered!</span>
-              </button>
-              : <button type="button" className="button_water_yellow" onClick={handleClick}><GiWateringCan size={22} style={{ verticalAlign: 'baseline' }} />
-                <span className="button_water_text"> Watered!</span>
-              </button>
-            }
+            <button type="button" className={(!shouldWater) ? "button_water_green" : "button_water_yellow"} onClick={handleClick}>
+              <GiWateringCan size={22} style={{ verticalAlign: 'baseline' }} />
+              <span className="button_water_text"> Watered!</span>
+            </button>
           </div>
         </div>
         : <div className="myplantcard">

@@ -227,10 +227,10 @@ function Filter({ plants, filterPlants, shouldWater }) {
           </div>
         </label>
       </div>
-      {(!shouldWater) ?
-        <button className="form_btn_green" type="submit">Find my perfect plant match!</button>
-        : <button className="form_btn_yellow" type="submit">Find my perfect plant match!</button>
-      }
+
+      <button className={(!shouldWater) ? "form_btn_green" : "form_btn_yellow"} type="submit">Find my perfect plant match!</button>
+
+
     </form>
 
   )
