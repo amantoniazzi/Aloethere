@@ -87,7 +87,6 @@ export default function usePushNotifications() {
     setError(false);
     return createNotificationSubscription()
       .then(function (subscrition) {
-        console.log(subscrition);
         setUserSubscription(subscrition);
         setLoading(false);
 
@@ -107,7 +106,6 @@ export default function usePushNotifications() {
   const onLoadSendSubscriptionToPushServer = (subscription) => {
     setLoading(true);
     setError(false);
-    console.log(subscription);
     return http
       .post("/subscription", subscription)
       .then(function (response) {
@@ -126,7 +124,6 @@ export default function usePushNotifications() {
   const onLoadSendNotification = () => {
     setLoading(true);
     setError(false);
-    console.log('here, getting notification')
     return http.get(`/subscription/${pushServerSubscriptionId}`)
       .then(setLoading(false))
       .catch(err => {

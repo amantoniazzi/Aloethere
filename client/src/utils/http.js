@@ -1,4 +1,4 @@
-const host = "https://localhost:3001";
+const host = "http://localhost:3001";
 
 function post(path, body) {
   return fetch(`${host}${path}`, {

@@ -38,9 +38,8 @@ function App() {
     setShouldWater(shouldIWater());
   }, [myPlants])
 
-
-
   const getMyPlants = () => {
+    console.log('here')
     ApiService.getMyPlants()
       .then(data => {
         console.log('got data', data);

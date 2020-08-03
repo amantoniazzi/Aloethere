@@ -1,4 +1,4 @@
-const BASE_URL = "https://localhost:3001";
+const BASE_URL = "http://localhost:3001";
 
 function getPlants() {
   return fetch(BASE_URL + '/plants')
@@ -8,6 +8,7 @@ function getPlants() {
 function getMyPlants() {
   return fetch(BASE_URL + '/myplants')
     .then(response => response.json())
+    .catch(err => console.log(err));
 }
 
 function postMyPlant(data) {

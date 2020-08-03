@@ -104,3 +104,14 @@
   font-size: 17px;
   font-weight: bold;
 }
+
+.confirmation_button {
+  width: 150px;
+  margin: 0px;
+  background: #C10346;
+  color: white;
+}
+
+.cancelImg {
+  width: 20px;
+}
