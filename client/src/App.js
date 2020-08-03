@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Router, Switch, Route, Link } from "react-router-dom";
 import { IoIosHome, IoIosLeaf, IoIosSearch } from "react-icons/io";
 import ApiService from './services/ApiService';
+import usePushNotifications from "./usePushNotifications";
 import moment from 'moment';
 import Home from './containers/Home/Home';
 import Search from './containers/Search/Search';
@@ -26,6 +27,8 @@ function App() {
       return (diff < 0) ? true : false;
     })
   }
+  usePushNotifications();
+
 
   useEffect(() => {
     getMyPlants();

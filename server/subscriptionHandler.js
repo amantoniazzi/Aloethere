@@ -26,13 +26,12 @@ function handlePushNotificationSubscription(req, res) {
 function sendPushNotification(req, res) {
   const subscriptionId = req.params.id;
   const pushSubscription = subscriptions[subscriptionId];
-  console.log('pushSubscription', pushSubscription)
   webpush
     .sendNotification(
       pushSubscription,
       JSON.stringify({
-        title: "New Product Available ",
-        text: "HEY! Take a look at this brand new t-shirt!",
+        title: "HEY! Your plants need you!",
+        text: "Check their watering schedule",
         tag: "new-product",
         // image: "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg",
         // url: "/new-product-jason-leung-HM6TMmevbZQ-unsplash.html"

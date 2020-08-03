@@ -13,7 +13,6 @@ import {
 
 const pushNotificationSupported = isPushNotificationSupported();
 //first thing to do: check if the push notifications are supported by the browser
-
 export default function usePushNotifications() {
   const [userConsent, setSuserConsent] = useState(Notification.permission);
   //to manage the user consent: Notification.permission is a JavaScript native function that return the current state of the permission
@@ -48,6 +47,12 @@ export default function usePushNotifications() {
       setLoading(false);
     };
     getExixtingSubscription();
+    onClickAskUserPermission()
+      .then(onClickSusbribeToPushNotification)
+      .then(subscription => {
+        console.log('app subscription', subscription)
+        onClickSendSubscriptionToPushServer(subscription)
+      })
   }, []);
   //Retrieve if there is any push notification subscription for the registered service worker
   // this use effect runs only in the first render
@@ -60,7 +65,7 @@ export default function usePushNotifications() {
   const onClickAskUserPermission = () => {
     setLoading(true);
     setError(false);
-    askUserPermission().then(consent => {
+    return askUserPermission().then(consent => {
       setSuserConsent(consent);
       if (consent !== "granted") {
         setError({
@@ -81,10 +86,13 @@ export default function usePushNotifications() {
   const onClickSusbribeToPushNotification = () => {
     setLoading(true);
     setError(false);
-    createNotificationSubscription()
+    return createNotificationSubscription()
       .then(function (subscrition) {
+        console.log(subscrition);
         setUserSubscription(subscrition);
         setLoading(false);
+
+        return subscrition;
       })
       .catch(err => {
         console.error("Couldn't create the notification subscription", err, "name:", err.name, "message:", err.message, "code:", err.code);
@@ -97,11 +105,12 @@ export default function usePushNotifications() {
    * define a click handler that sends the push susbcribtion to the push server.
    * Once the subscription ics created on the server, it saves the id using the hook setPushServerSubscriptionId
    */
-  const onClickSendSubscriptionToPushServer = () => {
+  const onClickSendSubscriptionToPushServer = (subscription) => {
     setLoading(true);
     setError(false);
-    http
-      .post("/subscription", userSubscription)
+    console.log(subscription);
+    return http
+      .post("/subscription", subscription)
       .then(function (response) {
         setPushServerSubscriptionId(response.id);
         setLoading(false);
@@ -115,15 +124,16 @@ export default function usePushNotifications() {
   /**
    * define a click handler that request the push server to send a notification, passing the id of the saved subscription
    */
-  const onClickSendNotification = async () => {
+  const onClickSendNotification = () => {
     setLoading(true);
     setError(false);
     console.log('here, getting notification')
-    await http.get(`/subscription/${pushServerSubscriptionId}`).catch(err => {
-      setLoading(false);
-      setError(err);
-    });
-    setLoading(false);
+    return http.get(`/subscription/${pushServerSubscriptionId}`)
+      .then(setLoading(false))
+      .catch(err => {
+        setLoading(false);
+        setError(err);
+      })
   };
 
   /**

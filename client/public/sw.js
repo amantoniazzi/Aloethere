@@ -39,7 +39,7 @@ function receivePushNotification(event) {
 function openPushNotification(event) {
   console.log("Notification click Received.", event.notification.data);
   event.notification.close();
-  //do something
+  // event.waitUntil(clients.openWindow(event.notification.data));
 }
 self.addEventListener("push", receivePushNotification);
 self.addEventListener("notificationclick", openPushNotification);
