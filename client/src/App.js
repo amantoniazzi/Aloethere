@@ -5,6 +5,7 @@ import ApiService from './services/ApiService';
 import usePushNotifications from "./usePushNotifications";
 import moment from 'moment';
 import Home from './containers/Home/Home';
+import Spinner from './components/Spinner/Spinner';
 import Search from './containers/Search/Search';
 import MyPlants from './containers/MyPlants/MyPlants';
 import AddPlant from './components/AddPlant/AddPlant';
@@ -17,6 +18,7 @@ function App() {
   const [myPlants, setMyPlants] = useState([]);
   const [shouldWater, setShouldWater] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [loading, setLoading] = useState(true);
 
   const shouldIWater = () => {
     return myPlants.some(myPlant => {
@@ -24,6 +26,7 @@ function App() {
       const new_date = moment(myPlant.lastWatered).add(interval, 'days');
       const current = moment();
       const diff = new_date.diff(current, 'days') + 1;
+      setLoading(false);
       return (diff < 0) ? true : false;
     })
   }
@@ -160,7 +163,10 @@ function App() {
           <Route path="/notifications">
           </Route>
           <Route path="/">
-            <Home shouldWater={shouldWater} />
+            {
+              (loading) ? <Spinner />
+                : <Home shouldWater={shouldWater} />
+            }
           </Route>
         </Switch>
       </div>
