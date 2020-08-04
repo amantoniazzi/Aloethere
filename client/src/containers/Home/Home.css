@@ -2,6 +2,12 @@
   margin-top: 2%;
 }
 
+@media (min-width: 825px) and (max-width: 1680px) {
+  .Home {
+    margin-bottom: 10%;
+  }
+}
+
 .home_green, .home_yellow {
   display: flex;
   flex-direction: column;
@@ -53,14 +59,39 @@ button {
   color: #ffffff;
 }
 
+@media (min-width: 825px) and (max-width: 1680px) {
+  .button_green {
+    margin: 0% 35% 2% 35%;
+    background: #00BFA6;
+    color: #ffffff;
+  }
+}
+
 .button_yellow {
   margin: 0% 25% 2% 25%;
   background: #F9A826;
   color: #ffffff;
 }
 
+@media (min-width: 825px) and (max-width: 1380px) {
+  .button_yellow {
+    margin: 0% 35% 2% 35%;
+    background: #F9A826;
+    color: #ffffff;
+  }
+}
+
 .home_img {
   width: 100%;
+}
+
+@media (min-width: 625px) and (max-width: 1680px) {
+  .home_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
 }
 
 .home_quote_green {

@@ -18,7 +18,10 @@ function Home({ shouldWater }) {
           <span className="title_text">Aloe there! </span>
           <GiDandelionFlower size={32} />
         </h1>
-        <h3 className="home_subtitle">All your plants are watered and happy!</h3>
+        {(!shouldWater)
+          ? <h3 className="home_subtitle">All your plants are watered and happy!</h3>
+          : <h3 className="home_subtitle">Your plants need love (and water)!</h3>
+        }
         <button className={(!shouldWater) ? "button_green" : "button_yellow"} type="button" onClick={() => history.push('/myplants')}>
           Check on them
             </button>
