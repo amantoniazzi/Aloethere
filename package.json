@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha tests/test.js --watch",
-    "heroku-postbuild": "./scripts/heroku.build"
+    "heroku-postbuildx": "./scripts/heroku.build"
   },
   "keywords": [],
   "author": "",
