@@ -1,6 +1,7 @@
 .plant_form {
   text-align: center;
   margin-top: 0px;
+  height: 100%
 }
 
 .hr_green {
@@ -44,14 +45,29 @@
   text-align: left;
 }
 
+.page1 .form_subtitle, .page2 .form_subtitle {
+  margin: 10px 45px;
+}
+
 .form_btn_green {
-  margin: 0% 15% 2% 15%;
+  margin: 30% 15% 2% 15%;
   background: #00BFA6;
   color: #ffffff;
 }
 
 .form_btn_yellow {
-  margin: 0% 15% 2% 15%;
+  margin: 30% 15% 2% 15%;
   background: #F9A826;
   color: #ffffff;
+}
+
+.page1, .page2 {
+  width: 100%;
+  text-align: center;
+}
+
+.carousel {
+  height: 100%;
+  margin-top: 15px;
+  margin-bottom: 50px;
 }

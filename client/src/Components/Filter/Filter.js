@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { IoIosStar, IoMdSunny, IoIosWater, IoIosThermometer, IoMdSnow } from "react-icons/io";
 import { RiCheckboxCircleLine } from "react-icons/ri";
+import Flickity from 'react-flickity-component';
+import "./flickity.css";
 import './Filter.css';
+
+const flickityOptions = {
+  initialIndex: 2
+}
 
 function Filter({ plants, filterPlants, shouldWater }) {
 
@@ -101,149 +107,162 @@ function Filter({ plants, filterPlants, shouldWater }) {
         <hr className="hr_green" />
         : <hr className="hr_yellow" />
       }
-      <h3 className="form_subtitle">Are you an expert plant parent?</h3>
-      <div onChange={handleDifficulty}>
-        <label >
-          <input
-            type="radio"
-            name="difficulty"
-            id="1"
-            className={(selectedDifficulty >= 1) ? "selected" : "unselected"}
-            value="Low"
-            onChange={difficultyIsChecked} />
-          <div className="icon">
-            <IoIosStar size={25} />
+      <Flickity
+        className={'carousel'} // default ''
+        elementType={'div'} // default 'div'
+        options={flickityOptions} // takes flickity options {}
+        disableImagesLoaded={false} // default false
+        reloadOnUpdate // default false
+        static // default false
+      >
+        <div className="page1">
+          <h3 className="form_subtitle">Are you an expert plant parent?</h3>
+          <div onChange={handleDifficulty}>
+            <label >
+              <input
+                type="radio"
+                name="difficulty"
+                id="1"
+                className={(selectedDifficulty >= 1) ? "selected" : "unselected"}
+                value="Low"
+                onChange={difficultyIsChecked} />
+              <div className="icon">
+                <IoIosStar size={25} />
+              </div>
+            </label>
+            <label>
+              <input type="radio" name="difficulty" id="2" value="Medium" onChange={difficultyIsChecked} className={(selectedDifficulty >= 2) ? "selected" : "unselected"} />
+              <div className="icon">
+                <IoIosStar size={25} />
+              </div>
+            </label>
+            <label>
+              <input type="radio" name="difficulty" id="3" value="High" onChange={difficultyIsChecked} className={(selectedDifficulty >= 3) ? "selected" : "unselected"} />
+              <div className="icon">
+                <IoIosStar size={25} />
+              </div>
+            </label>
           </div>
-        </label>
-        <label>
-          <input type="radio" name="difficulty" id="2" value="Medium" onChange={difficultyIsChecked} className={(selectedDifficulty >= 2) ? "selected" : "unselected"} />
-          <div className="icon">
-            <IoIosStar size={25} />
-          </div>
-        </label>
-        <label>
-          <input type="radio" name="difficulty" id="3" value="High" onChange={difficultyIsChecked} className={(selectedDifficulty >= 3) ? "selected" : "unselected"} />
-          <div className="icon">
-            <IoIosStar size={25} />
-          </div>
-        </label>
-      </div>
 
-      <h3 className="form_subtitle">Will you water it frequently?</h3>
-      <div onChange={handleWater}>
-        <label>
-          <input type="radio" name="water" value="30 days" onChange={waterIsChecked} className={(selectedWater >= 1) ? "selected" : "unselected"} />
-          <div className="icon">
-            <IoIosWater size={25} />
+          <h3 className="form_subtitle">Will you water it frequently?</h3>
+          <div onChange={handleWater}>
+            <label>
+              <input type="radio" name="water" value="30 days" onChange={waterIsChecked} className={(selectedWater >= 1) ? "selected" : "unselected"} />
+              <div className="icon">
+                <IoIosWater size={25} />
+              </div>
+            </label>
+            <label>
+              <input type="radio" name="water" value="14 days" onChange={waterIsChecked} className={(selectedWater >= 2) ? "selected" : "unselected"} />
+              <div className="icon">
+                <IoIosWater size={25} />
+              </div>
+            </label>
+            <label>
+              <input type="radio" name="water" value="7 days" onChange={waterIsChecked} className={(selectedWater >= 3) ? "selected" : "unselected"} />
+              <div className="icon">
+                <IoIosWater size={25} />
+              </div>
+            </label>
           </div>
-        </label>
-        <label>
-          <input type="radio" name="water" value="14 days" onChange={waterIsChecked} className={(selectedWater >= 2) ? "selected" : "unselected"} />
-          <div className="icon">
-            <IoIosWater size={25} />
-          </div>
-        </label>
-        <label>
-          <input type="radio" name="water" value="7 days" onChange={waterIsChecked} className={(selectedWater >= 3) ? "selected" : "unselected"} />
-          <div className="icon">
-            <IoIosWater size={25} />
-          </div>
-        </label>
-      </div>
+          <h3 className="form_subtitle">What type of plant you prefer?</h3>
+          <div onChange={handleType}>
 
-      <h3 className="form_subtitle">How much light does your room have?</h3>
-      <div onChange={handleLight}>
-        <label>
-          <input type="radio" name="light" value="Low" onChange={lightIsChecked} className={(selectedLight >= 1) ? "selected" : "unselected"} />
-          <div className="icon">
-            <IoMdSunny size={25} />
-          </div>
-        </label>
-        <label>
-          <input type="radio" name="light" value="Medium" onChange={lightIsChecked} className={(selectedLight >= 2) ? "selected" : "unselected"} />
-          <div className="icon">
-            <IoMdSunny size={25} />
-          </div>
-        </label>
-        <label>
-          <input type="radio" name="light" value="High" onChange={lightIsChecked} className={(selectedLight >= 3) ? "selected" : "unselected"} />
-          <div className="icon">
-            <IoMdSunny size={25} />
-          </div>
-        </label>
-      </div>
-
-      <h3 className="form_subtitle">How much humidity?</h3>
-      <div onChange={handleHumidity}>
-        <label>
-          <input type="radio" name="humidity" value="Low" onChange={humidityIsChecked} className={(selectedHumidity >= 1) ? "selected" : "unselected"} />
-          <div className="icon">
-            <IoIosThermometer size={25} />
-          </div>
-        </label>
-        <label>
-          <input type="radio" name="humidity" value="Medium" onChange={humidityIsChecked} className={(selectedHumidity >= 2) ? "selected" : "unselected"} />
-          <div className="icon">
-            <IoIosThermometer size={25} />
-          </div>
-        </label>
-        <label>
-          <input type="radio" name="humidity" value="High" onChange={humidityIsChecked} className={(selectedHumidity >= 3) ? "selected" : "unselected"} />
-          <div className="icon">
-            <IoIosThermometer size={25} />
-          </div>
-        </label>
-      </div>
-      <h3 className="form_subtitle">What type of plant you prefer?</h3>
-      <div onChange={handleType}>
-
-        <label className="label_type">
-          <input type="radio" value='Ferns' name="type" />
-          <div className="icon">
-            <RiCheckboxCircleLine size={20} />
-          </div>
+            <label className="label_type">
+              <input type="radio" value='Ferns' name="type" />
+              <div className="icon">
+                <RiCheckboxCircleLine size={20} />
+              </div>
             Ferns
         </label><br />
-        <label>
-          <input type="radio" id="hanging" name="type" value="Hanging plants" />
-          <div className="icon">
-            <RiCheckboxCircleLine size={20} />
-          </div>
+            <label>
+              <input type="radio" id="hanging" name="type" value="Hanging plants" />
+              <div className="icon">
+                <RiCheckboxCircleLine size={20} />
+              </div>
           Hanging plants</label><br />
-        <label>
-          <input type="radio" name="type" value="Trees" />
-          <div className="icon">
-            <RiCheckboxCircleLine size={20} />
-          </div>
+            <label>
+              <input type="radio" name="type" value="Trees" />
+              <div className="icon">
+                <RiCheckboxCircleLine size={20} />
+              </div>
           Trees</label><br />
-        <label className="label_type">
-          <input type="radio" value='Cacti and succulents' name="type" />
-          <div className="icon">
-            <RiCheckboxCircleLine size={20} />
-          </div>
+            <label className="label_type">
+              <input type="radio" value='Cacti and succulents' name="type" />
+              <div className="icon">
+                <RiCheckboxCircleLine size={20} />
+              </div>
            Cacti &#x26; succulents
         </label><br />
 
-        <label className="label_type">
-          <input type="radio" value='Palms' name="type" />
-          <div className="icon">
-            <RiCheckboxCircleLine size={20} />
-          </div>
+            <label className="label_type">
+              <input type="radio" value='Palms' name="type" />
+              <div className="icon">
+                <RiCheckboxCircleLine size={20} />
+              </div>
            Palms
         </label><br />
 
-      </div>
-      <h3 className="form_subtitle">Do you want an airpurifying plant?</h3>
-      <div onChange={handleAirPurifying} >
-        <label>
-          <input type="radio" id="air" name="air" value="true" />
-          <div className="icon">
-            <IoMdSnow size={25} />
           </div>
-        </label>
-      </div>
+        </div>
+        <div className="page2">
+          <h3 className="form_subtitle">How much light does your room have?</h3>
+          <div onChange={handleLight}>
+            <label>
+              <input type="radio" name="light" value="Low" onChange={lightIsChecked} className={(selectedLight >= 1) ? "selected" : "unselected"} />
+              <div className="icon">
+                <IoMdSunny size={25} />
+              </div>
+            </label>
+            <label>
+              <input type="radio" name="light" value="Medium" onChange={lightIsChecked} className={(selectedLight >= 2) ? "selected" : "unselected"} />
+              <div className="icon">
+                <IoMdSunny size={25} />
+              </div>
+            </label>
+            <label>
+              <input type="radio" name="light" value="High" onChange={lightIsChecked} className={(selectedLight >= 3) ? "selected" : "unselected"} />
+              <div className="icon">
+                <IoMdSunny size={25} />
+              </div>
+            </label>
+          </div>
 
-      <button className={(!shouldWater) ? "form_btn_green" : "form_btn_yellow"} type="submit">Find my perfect plant match!</button>
+          <h3 className="form_subtitle">How much humidity?</h3>
+          <div onChange={handleHumidity}>
+            <label>
+              <input type="radio" name="humidity" value="Low" onChange={humidityIsChecked} className={(selectedHumidity >= 1) ? "selected" : "unselected"} />
+              <div className="icon">
+                <IoIosThermometer size={25} />
+              </div>
+            </label>
+            <label>
+              <input type="radio" name="humidity" value="Medium" onChange={humidityIsChecked} className={(selectedHumidity >= 2) ? "selected" : "unselected"} />
+              <div className="icon">
+                <IoIosThermometer size={25} />
+              </div>
+            </label>
+            <label>
+              <input type="radio" name="humidity" value="High" onChange={humidityIsChecked} className={(selectedHumidity >= 3) ? "selected" : "unselected"} />
+              <div className="icon">
+                <IoIosThermometer size={25} />
+              </div>
+            </label>
+          </div>
+
+          <h3 className="form_subtitle">Do you want an airpurifying plant?</h3>
+          <div onChange={handleAirPurifying} >
+            <label>
+              <input type="radio" id="air" name="air" value="true" />
+              <div className="icon">
+                <IoMdSnow size={25} />
+              </div>
+            </label>
+          </div>
+          <button className={(!shouldWater) ? "form_btn_green" : "form_btn_yellow"} type="submit">Find my perfect plant match!</button>
+        </div>
+      </Flickity>
+
 
 
     </form>

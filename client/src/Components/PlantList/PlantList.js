@@ -9,19 +9,25 @@ function PlantList({ plants, label, emptyFilter, shouldWater }) {
     emptyFilter();
   }
 
-  return (
-    <div className="list" label={label}>
-      <h2 className={(!shouldWater) ? "plantlist_title_green" : "plantlist_title_yellow"}>Our finds for you:
-      </h2>
 
-      {plants.map(plant =>
-        <PlantItem key={plant._id} plant={plant} />
-      )}
+
+  return (
+    <div label={label}>
       {plants.length > 0
         ?
-        <button className={(!shouldWater) ? "clear_button_green" : "clear_button_yellow"} type="button" onClick={handleClearClick}>
-          <span className="clear_button_text">Clear</span>
-        </button>
+        <div className="list">
+
+          <h2 className={(!shouldWater) ? "plantlist_title_green" : "plantlist_title_yellow"}>Our finds for you:
+      </h2>
+
+          {plants.map(plant =>
+            <PlantItem key={plant._id} plant={plant} />
+          )}
+
+          <button className={(!shouldWater) ? "clear_button_green" : "clear_button_yellow"} type="button" onClick={handleClearClick}>
+            <span className="clear_button_text">Clear</span>
+          </button>
+        </div>
         : <div></div>
       }
     </div>
