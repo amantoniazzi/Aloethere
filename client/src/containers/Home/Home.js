@@ -5,7 +5,6 @@ import { GiDandelionFlower } from "react-icons/gi";
 import greenImg from '../../assets/greenHomepagenarrow.png';
 import yellowImg from '../../assets/yellowHomepagenarrow.png';
 
-
 import './Home.css';
 
 function Home({ shouldWater }) {

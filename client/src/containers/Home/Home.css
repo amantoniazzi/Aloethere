@@ -2,9 +2,13 @@
   margin-top: 2%;
 }
 
-@media (min-width: 825px) and (max-width: 1680px) {
+@media (min-width: 825px) and (max-width: 1780px) {
   .Home {
     margin-bottom: 10%;
+    height: 100vh;
+    background-image: url('../../assets/greenHomepage-desktop.png');
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
   }
 }
 
@@ -59,7 +63,7 @@ button {
   color: #ffffff;
 }
 
-@media (min-width: 825px) and (max-width: 1680px) {
+@media (min-width: 825px) and (max-width: 1780px) {
   .button_green {
     margin: 0% 35% 2% 35%;
     background: #00BFA6;
@@ -73,7 +77,7 @@ button {
   color: #ffffff;
 }
 
-@media (min-width: 825px) and (max-width: 1380px) {
+@media (min-width: 825px) and (max-width: 1780px) {
   .button_yellow {
     margin: 0% 35% 2% 35%;
     background: #F9A826;
@@ -85,12 +89,9 @@ button {
   width: 100%;
 }
 
-@media (min-width: 625px) and (max-width: 1680px) {
+@media (min-width: 625px) and (max-width: 1780px) {
   .home_img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    display: none;
   }
 }
 
@@ -106,6 +107,12 @@ button {
   text-align: center;
   margin: 1% 5%;
   border: 0.5px solid #F9A826;
+}
+
+@media (min-width: 625px) and (max-width: 1780px) {
+  .home_quote_green, .home_quote_yellow {
+    margin-top: 50%;
+  }
 }
 
 .quote_green {
