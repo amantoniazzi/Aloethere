@@ -40,6 +40,10 @@
   color: black;
 }
 
+.label_type {
+  text-align: left;
+}
+
 .form_btn_green {
   margin: 0% 15% 2% 15%;
   background: #00BFA6;

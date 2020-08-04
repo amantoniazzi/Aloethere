@@ -197,26 +197,41 @@ function Filter({ plants, filterPlants, shouldWater }) {
       <h3 className="form_subtitle">What type of plant you prefer?</h3>
       <div onChange={handleType}>
 
-        <label>
+        <label className="label_type">
           <input type="radio" value='Ferns' name="type" />
           <div className="icon">
             <RiCheckboxCircleLine size={20} />
           </div>
             Ferns
         </label><br />
-
-        <label>
-          <input type="radio" name="type" value="Trees" />
-          <div className="icon">
-            <RiCheckboxCircleLine size={20} />
-          </div>
-          Trees</label><br />
         <label>
           <input type="radio" id="hanging" name="type" value="Hanging plants" />
           <div className="icon">
             <RiCheckboxCircleLine size={20} />
           </div>
           Hanging plants</label><br />
+        <label>
+          <input type="radio" name="type" value="Trees" />
+          <div className="icon">
+            <RiCheckboxCircleLine size={20} />
+          </div>
+          Trees</label><br />
+        <label className="label_type">
+          <input type="radio" value='Cacti and succulents' name="type" />
+          <div className="icon">
+            <RiCheckboxCircleLine size={20} />
+          </div>
+           Cacti &#x26; succulents
+        </label><br />
+
+        <label className="label_type">
+          <input type="radio" value='Palms' name="type" />
+          <div className="icon">
+            <RiCheckboxCircleLine size={20} />
+          </div>
+           Palms
+        </label><br />
+
       </div>
       <h3 className="form_subtitle">Do you want an airpurifying plant?</h3>
       <div onChange={handleAirPurifying} >

@@ -17,12 +17,12 @@ async function askUserPermission() {
  * shows a notification
  */
 function sendNotification() {
-  const img = "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg";
+  const img = "../../assets/notification.png";
   const text = "Check the watering schedule";
   const title = "HEY! Your plants need you";
   const options = {
     body: text,
-    icon: "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg",
+    icon: "../../assets/notification.png",
     vibrate: [200, 100, 200],
     tag: "new-product",
     image: img,
