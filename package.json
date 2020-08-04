@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha tests/test.js --watch"
+    "test": "mocha tests/test.js --watch",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
