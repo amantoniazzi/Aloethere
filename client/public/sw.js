@@ -9,8 +9,10 @@ async function createNotificationSubscription() {
   });
 }
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+
 async function postSubscription(subscription) {
-  const response = await fetch(`https://localhost:3001/subscription`, {
+  const response = await fetch(`${API_URL}/subscription`, {
     credentials: "omit",
     headers: { "content-type": "application/json;charset=UTF-8", "sec-fetch-mode": "cors" },
     body: JSON.stringify(subscription),

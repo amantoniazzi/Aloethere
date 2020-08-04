@@ -1,15 +1,15 @@
+require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const router = require('./router');
-const fs = require('fs');
+//const fs = require('fs');
 // const key = fs.readFileSync('./key.pem');
 // const cert = fs.readFileSync('./cert.pem');
 // const https = require('https');
 // const http = require('http');
 
-const PORT = 3001;
-
+const PORT = process.env.PORT || 3001;
 const app = express();
 // const server = https.createServer({ key: key, cert: cert }, app);
 // const server = http.createServer(app);
