@@ -9,3 +9,4 @@ The client is a react app bootstrapped with create-react-app.
 In the containers folder you can find the 3 main screens.
 
 You can find default settings to run the server and mongoDB in the index.js files.
+You can start the server with npm run start script, same for the client.
