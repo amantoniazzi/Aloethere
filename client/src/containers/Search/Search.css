@@ -8,6 +8,12 @@
   padding-top: 2%;
 }
 
+@media (min-width: 625px) and (max-width: 1780px) {
+  .dashboard_filter {
+    padding: 5% 20%;
+  }
+}
+
 .dashboard_plantlist {
   padding-top: 2%;
 }

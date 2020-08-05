@@ -4,8 +4,7 @@
 
 @media (min-width: 825px) and (max-width: 1780px) {
   .Home {
-    margin-bottom: 10%;
-    height: 100vh;
+    margin-bottom: 4%;
     background-image: url('../../assets/greenHomepage-desktop.png');
     background-repeat: no-repeat, repeat;
     background-size: cover;
@@ -111,7 +110,7 @@ button {
 
 @media (min-width: 625px) and (max-width: 1780px) {
   .home_quote_green, .home_quote_yellow {
-    margin-top: 50%;
+    margin: 5% 25% 50% 25%;
   }
 }
 
