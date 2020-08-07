@@ -11,11 +11,7 @@ function PlantItem({ plant }) {
   return (
     <div className="plantcard">
       <div className="plantcard_img">
-        <img
-          className="circle_img"
-          src={require('../../assets/' + plant._id + '.jpg')}
-          alt={plant.commonName}
-        />
+        <img className="circle_img" src={plant.imgUrl} alt={plant.commonName} />
       </div>
       <div className="plantcard-info">
         <h2 className="plantcard-title">{plant.commonName}</h2>
