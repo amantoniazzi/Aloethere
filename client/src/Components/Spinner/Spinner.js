@@ -1,6 +1,6 @@
-import React from "react";
-import { css } from "@emotion/core";
-import PulseLoader from "react-spinners/PulseLoader";
+import React from 'react';
+import { css } from '@emotion/core';
+import PulseLoader from 'react-spinners/PulseLoader';
 
 const override = css`
   border-color: #F9A826;
@@ -14,11 +14,7 @@ const override = css`
 function Spinner() {
   return (
     <div className="sweet-loading">
-      <PulseLoader
-        css={override}
-        size={20}
-        color={"#F9A826"}
-      />
+      <PulseLoader css={override} size={20} color={'#F9A826'} />
     </div>
   );
 }

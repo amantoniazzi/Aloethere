@@ -23,6 +23,7 @@ exports.postPlant = async (req, res) => {
       water: req.body.water,
       humidity: req.body.humidity,
       airPurifying: req.body.airPurifying,
+      imgUrl: req.body.imgUrl,
     });
 
     res.status(201).json(plant);

@@ -10,6 +10,7 @@ const PlantSchema = new Schema({
   water: { type: String, required: true },
   humidity: { type: String, required: true },
   airPurifying: { type: Boolean, required: true },
+  imgUrl: {type: String, required: true}
 })
 
 module.exports = mongoose.model('Plants', PlantSchema);
