@@ -1,7 +1,8 @@
 import React from 'react';
 import MyPlantItem from '../myPlantItem/MyPlantItem';
 
-function MyPlantList({ myPlants,
+function MyPlantList({
+  myPlants,
   updateMyPlant,
   getMyPlants,
   updatePlantStatus,
@@ -9,12 +10,13 @@ function MyPlantList({ myPlants,
   deleteMyPlant,
   modalIsOpen,
   openModal,
-  closeModal }) {
+  closeModal,
+}) {
   return (
     <div className="list">
       {myPlants
         .sort((a, b) => new Date(a.lastWatered) - new Date(b.lastWatered))
-        .map(myPlant =>
+        .map((myPlant) => (
           <MyPlantItem
             key={myPlant._id}
             myPlant={myPlant}
@@ -27,9 +29,9 @@ function MyPlantList({ myPlants,
             openModal={openModal}
             closeModal={closeModal}
           />
-        )}
+        ))}
     </div>
-  )
+  );
 }
 
 export default MyPlantList;

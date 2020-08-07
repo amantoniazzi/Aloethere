@@ -1,7 +1,13 @@
 import React, { useEffect } from 'react';
 import Modal from 'react-modal';
 
-function DeleteModal({ myPlant, deleteMyPlant, modalIsOpen, openModal, closeModal }) {
+function DeleteModal({
+  myPlant,
+  deleteMyPlant,
+  modalIsOpen,
+  openModal,
+  closeModal,
+}) {
   const customStyles = {
     content: {
       top: '50%',
@@ -10,18 +16,18 @@ function DeleteModal({ myPlant, deleteMyPlant, modalIsOpen, openModal, closeModa
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      textAlign: 'center'
-    }
+      textAlign: 'center',
+    },
   };
 
   useEffect(() => {
     Modal.setAppElement('body');
-  }, [])
+  }, []);
 
   const handleDeleteClick = () => {
-    deleteMyPlant(myPlant._id)
+    deleteMyPlant(myPlant._id);
     closeModal();
-  }
+  };
 
   return (
     <div>
@@ -31,18 +37,22 @@ function DeleteModal({ myPlant, deleteMyPlant, modalIsOpen, openModal, closeModa
         style={customStyles}
         contentLabel="Example modal"
       >
-
         <h2>Are you sure you want to delete your plant?</h2>
-        <button className="delete_button" onClick={closeModal}>x</button>
+        <button className="delete_button" onClick={closeModal}>
+          x
+        </button>
         <div className="cancel_img">
-          <img src={require('../../assets/cancelPlant.png')} alt="delete a plant" />
+          <img
+            src={require('../../assets/cancelPlant.png')}
+            alt="delete a plant"
+          />
         </div>
-        <button className="confirmation_button" onClick={handleDeleteClick}>I'm sure</button>
+        <button className="confirmation_button" onClick={handleDeleteClick}>
+          I'm sure
+        </button>
       </Modal>
     </div>
-
-  )
+  );
 }
 
 export default DeleteModal;
-

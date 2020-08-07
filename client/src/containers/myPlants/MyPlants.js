@@ -11,9 +11,8 @@ function MyPlants({
   deleteMyPlant,
   modalIsOpen,
   openModal,
-  closeModal
+  closeModal,
 }) {
-
   return (
     <div className="myplants">
       <h2 className="myplants-title">Welcome back to your plant fam!</h2>
@@ -30,7 +29,7 @@ function MyPlants({
         closeModal={closeModal}
       />
     </div>
-  )
+  );
 }
 
 export default MyPlants;
