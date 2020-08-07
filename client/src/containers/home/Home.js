@@ -1,5 +1,5 @@
 import React from 'react';
-import history from '../../history';
+import history from '../../History';
 import { GiDandelionFlower } from 'react-icons/gi';
 import greenImg from '../../assets/greenHomepagenarrow.png';
 import yellowImg from '../../assets/yellowHomepagenarrow.png';

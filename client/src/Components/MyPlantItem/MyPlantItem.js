@@ -68,10 +68,7 @@ function MyPlantItem({
             closeModal={closeModal}
           />
           <div className="myplantcard_img">
-            <img
-              src={require('../../assets/' + myPlant.plantInfo._id + '.jpg')}
-              alt={myPlant.commonName}
-            />
+            <img src={myPlant.plantInfo.imgUrl} alt={myPlant.commonName} />
           </div>
           <div className="myplantcard-info">
             <h2 className="myplantcard-title">{myPlant.nickName}</h2>

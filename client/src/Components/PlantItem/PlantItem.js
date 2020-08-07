@@ -1,5 +1,5 @@
 import React from 'react';
-import history from '../../history';
+import history from '../../History';
 import { IoIosHeartEmpty } from 'react-icons/io';
 import './PlantItem.css';
 
