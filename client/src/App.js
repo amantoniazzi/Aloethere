@@ -4,11 +4,11 @@ import { IoIosHome, IoIosLeaf, IoIosAddCircleOutline } from "react-icons/io";
 import ApiService from './services/ApiService';
 import usePushNotifications from "./usePushNotifications";
 import moment from 'moment';
-import Home from './containers/Home/Home';
-import Spinner from './components/Spinner/Spinner';
-import Search from './containers/Search/Search';
-import MyPlants from './containers/MyPlants/MyPlants';
-import AddPlant from './components/AddPlant/AddPlant';
+import Home from './containers/home/Home';
+import Spinner from './components/spinner/Spinner';
+import Search from './containers/search/Search';
+import MyPlants from './containers/myPlants/MyPlants';
+import AddPlant from './components/addPlant/AddPlant';
 import history from './history';
 import './App.css';
 
@@ -155,7 +155,7 @@ function App() {
           </Route>
           <Route path="/">
             {
-              (loading) ? <Spinner />
+              (!loading) ? <Spinner />
                 : <Home shouldWater={shouldWater} />
             }
           </Route>

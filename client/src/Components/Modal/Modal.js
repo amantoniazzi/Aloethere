@@ -29,7 +29,7 @@ function DeleteModal({ myPlant, deleteMyPlant, modalIsOpen, openModal, closeModa
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="Example modal"
       >
 
         <h2>Are you sure you want to delete your plant?</h2>
