@@ -1,5 +1,5 @@
 import React from 'react';
-import PlantItem from '../plantItem/PlantItem';
+import PlantItem from '../PlantItem/PlantItem';
 
 import './PlantList.css';
 
