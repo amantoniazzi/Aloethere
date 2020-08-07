@@ -1,5 +1,5 @@
 import React from 'react';
-import MyPlantItem from '../MyPlantItem/MyPlantItem';
+import MyPlantItem from '../myPlantItem/MyPlantItem';
 
 function MyPlantList({ myPlants,
   updateMyPlant,

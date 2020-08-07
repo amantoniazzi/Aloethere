@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { GiWateringCan } from "react-icons/gi";
-import DeleteModal from '../Modal/Modal.js'
+import DeleteModal from '../modal/Modal.js'
 import './MyPlantItem.css'
 
 function MyPlantItem({ myPlant, updateMyPlant, shouldWater, deleteMyPlant, modalIsOpen, openModal, closeModal }) {
