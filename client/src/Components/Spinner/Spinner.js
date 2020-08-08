@@ -14,6 +14,7 @@ const override = css`
 function Spinner() {
   return (
     <div className="sweet-loading">
+      <h1>Loading...</h1>
       <PulseLoader css={override} size={20} color={'#F9A826'} />
     </div>
   );

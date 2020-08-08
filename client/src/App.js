@@ -70,7 +70,8 @@ function App() {
       humidity,
       airPurifying
     ).then((data) => {
-      if (data) setPlants(data);
+      if (data && data.length !== 0) setPlants(data);
+      else alert("Sorry, we can't find a matching plant");
     });
   };
 
