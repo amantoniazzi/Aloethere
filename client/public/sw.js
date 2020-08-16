@@ -8,7 +8,7 @@ async function createNotificationSubscription() {
   });
 }
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3001";
+const API_URL = process.env.REACT_APP_API_URL || "https://whispering-springs-27123.herokuapp.com/";
 
 async function postSubscription(subscription) {
   const response = await fetch(`${API_URL}/api/subscription`, {
