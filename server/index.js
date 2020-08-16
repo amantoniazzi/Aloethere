@@ -1,8 +1,7 @@
-require('dotenv').config()
-const express = require('express');
-const cors = require('cors');
-const morgan = require('morgan');
-const router = require('./router');
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const router = require("./router");
 //const fs = require('fs');
 // const key = fs.readFileSync('./key.pem');
 // const cert = fs.readFileSync('./cert.pem');
@@ -15,12 +14,13 @@ const app = express();
 // const server = http.createServer(app);
 
 app.use(cors());
-app.use(morgan('tiny'));
 app.use(express.static("../client/build"));
 app.use(express.json());
 app.use(router);
 
-app.get('/', (req, res) => { res.send('this is an secure server') });
+app.get("/", (req, res) => {
+  res.send("this is an secure server");
+});
 
 if (!module.parent) {
   // server.listen(PORT, () => {
@@ -28,7 +28,7 @@ if (!module.parent) {
   // })
   app.listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}`); //eslint-disable-line
-  })
+  });
 }
 
 module.exports = app;
