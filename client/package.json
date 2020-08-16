@@ -42,5 +42,7 @@
   },
   "devDependencies": {
     "babel-plugin-emotion": "^10.0.33"
-  }
+  },
+
+  "proxy": "http://localhost:3001"
 }
