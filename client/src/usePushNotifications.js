@@ -7,7 +7,7 @@ import {
   askUserPermission,
   registerServiceWorker,
   createNotificationSubscription,
-  getUserSubscription
+  getUserSubscription,
 } from "./push-notifications";
 //import all the function created to manage the push notifications
 
@@ -49,9 +49,9 @@ export default function usePushNotifications() {
     getExixtingSubscription();
     onLoadAskUserPermission()
       .then(onLoadSusbribeToPushNotification)
-      .then(subscription => {
-        onLoadSendSubscriptionToPushServer(subscription)
-      })
+      .then((subscription) => {
+        onLoadSendSubscriptionToPushServer(subscription);
+      });
   }, []);
   //Retrieve if there is any push notification subscription for the registered service worker
   // this use effect runs only in the first render
@@ -64,13 +64,13 @@ export default function usePushNotifications() {
   const onLoadAskUserPermission = () => {
     setLoading(true);
     setError(false);
-    return askUserPermission().then(consent => {
+    return askUserPermission().then((consent) => {
       setSuserConsent(consent);
       if (consent !== "granted") {
         setError({
           name: "Consent denied",
           message: "You denied the consent to receive notifications",
-          code: 0
+          code: 0,
         });
       }
       setLoading(false);
@@ -92,8 +92,17 @@ export default function usePushNotifications() {
 
         return subscrition;
       })
-      .catch(err => {
-        console.error("Couldn't create the notification subscription", err, "name:", err.name, "message:", err.message, "code:", err.code);
+      .catch((err) => {
+        console.error(
+          "Couldn't create the notification subscription",
+          err,
+          "name:",
+          err.name,
+          "message:",
+          err.message,
+          "code:",
+          err.code
+        );
         setError(err);
         setLoading(false);
       });
@@ -107,12 +116,12 @@ export default function usePushNotifications() {
     setLoading(true);
     setError(false);
     return http
-      .post("/subscription", subscription)
+      .post("/api/subscription", subscription)
       .then(function (response) {
         setPushServerSubscriptionId(response.id);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         setLoading(false);
         setError(err);
       });
@@ -124,12 +133,13 @@ export default function usePushNotifications() {
   const onLoadSendNotification = () => {
     setLoading(true);
     setError(false);
-    return http.get(`/subscription/${pushServerSubscriptionId}`)
+    return http
+      .get(`/api/subscription/${pushServerSubscriptionId}`)
       .then(setLoading(false))
-      .catch(err => {
+      .catch((err) => {
         setLoading(false);
         setError(err);
-      })
+      });
   };
 
   /**
@@ -145,6 +155,6 @@ export default function usePushNotifications() {
     pushNotificationSupported,
     userSubscription,
     error,
-    loading
+    loading,
   };
 }
