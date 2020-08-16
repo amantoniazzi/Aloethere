@@ -1,6 +1,6 @@
-import React from 'react';
-import moment from 'moment';
-import { GiWateringCan } from "react-icons/gi";
+import React from './node_modules/react';
+import moment from './node_modules/moment';
+import { GiWateringCan } from "./node_modules/react-icons/gi";
 import DeleteModal from '../Modal/Modal.js'
 import './MyPlantItem.css'
 

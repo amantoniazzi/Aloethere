@@ -1,7 +1,7 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React from './node_modules/react';
+import { withRouter } from './node_modules/react-router-dom';
 import history from '../../history';
-import {  IoIosHeartEmpty } from "react-icons/io";
+import {  IoIosHeartEmpty } from "./node_modules/react-icons/io";
 import './PlantItem.css'
 
 function PlantItem({ plant }) {

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import Modal from 'react-modal';
+import React, { useEffect } from './node_modules/react';
+import Modal from './node_modules/react-modal';
 
 function DeleteModal({ myPlant, deleteMyPlant, modalIsOpen, openModal, closeModal }) {
   const customStyles = {

@@ -1,6 +1,6 @@
-import React from 'react';
-import PlantList from '../../components/PlantList/PlantList';
-import Filter from '../../components/Filter/Filter';
+import React from './node_modules/react';
+import PlantList from '../../Components/PlantList/PlantList';
+import Filter from '../../Components/Filter/Filter';
 import './Search.css';
 
 function Search({ plants, filterPlants, shouldWater, emptyFilter }) {

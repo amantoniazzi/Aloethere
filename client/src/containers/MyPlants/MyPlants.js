@@ -1,5 +1,5 @@
-import React from 'react';
-import MyPlantList from '../../components/MyPlantList/MyPlantList';
+import React from './node_modules/react';
+import MyPlantList from '../../Components/MyPlantList/MyPlantList';
 import './MyPlants.css';
 
 function MyPlants({

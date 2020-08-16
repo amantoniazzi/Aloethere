@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { IoIosStar, IoMdSunny, IoIosWater, IoIosThermometer, IoMdSnow } from "react-icons/io";
-import { RiCheckboxCircleLine } from "react-icons/ri";
-import Flickity from 'react-flickity-component';
+import React, { useState } from './node_modules/react';
+import { IoIosStar, IoMdSunny, IoIosWater, IoIosThermometer, IoMdSnow } from "./node_modules/react-icons/io";
+import { RiCheckboxCircleLine } from "./node_modules/react-icons/ri";
+import Flickity from './node_modules/react-flickity-component';
 import "./flickity.css";
 import './Filter.css';
 

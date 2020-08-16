@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState } from './node_modules/react';
+import { useLocation } from './node_modules/react-router-dom';
 import history from '../../history';
 import './AddPlant.css';
 

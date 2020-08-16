@@ -1,7 +1,7 @@
-import React from 'react';
-import { withRouter } from 'react-router-dom';
+import React from './node_modules/react';
+import { withRouter } from './node_modules/react-router-dom';
 import history from '../../history';
-import { GiDandelionFlower } from "react-icons/gi";
+import { GiDandelionFlower } from "./node_modules/react-icons/gi";
 import greenImg from '../../assets/greenHomepagenarrow.png';
 import yellowImg from '../../assets/yellowHomepagenarrow.png';
 

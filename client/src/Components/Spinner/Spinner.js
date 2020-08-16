@@ -1,6 +1,6 @@
-import React from "react";
-import { css } from "@emotion/core";
-import PulseLoader from "react-spinners/PulseLoader";
+import React from "./node_modules/react";
+import { css } from "./node_modules/@emotion/core";
+import PulseLoader from "./node_modules/react-spinners/PulseLoader";
 
 const override = css`
   border-color: #F9A826;
