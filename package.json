@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha tests/test.js --watch",
-    "build": "npm i --prefix client && npm i --prefix server && npm runn build --prefix client",
+    "build": "npm i --prefix client && npm i --prefix server && npm run build --prefix client",
     "start": "npm start --prefix server"
   },
   "keywords": [],
