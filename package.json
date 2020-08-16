@@ -8,7 +8,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha tests/test.js --watch",
-    "heroku-postbuildx": "./scripts/heroku.build"
+    "build": "npm i --prefix client && npm i --prefix server && npm runn build --prefix client",
+    "start": "npm start --prefix server"
   },
   "keywords": [],
   "author": "",
