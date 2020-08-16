@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha tests/test.js --watch",
-    "build": "npm i --prefix client && npm i --prefix server && npm run build --prefix client",
+    "build": "npm install --prefix ./client ./aloethere/package.json && npm install --prefix ./server ./aloethere/package.json && npm run build --prefix client",
     "start": "npm start --prefix server"
   },
   "keywords": [],
