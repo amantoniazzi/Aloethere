@@ -18,10 +18,6 @@ app.use(express.static("../client/build"));
 app.use(express.json());
 app.use(router);
 
-app.get("/", (req, res) => {
-  res.send("this is an secure server");
-});
-
 if (!module.parent) {
   // server.listen(PORT, () => {
   //   console.log(`Server is listening on https://localhost:${PORT}`); //eslint-disable-line
