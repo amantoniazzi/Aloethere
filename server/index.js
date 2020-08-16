@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const morgan = require('morgan');
 const router = require('./router');
 //const fs = require('fs');
@@ -16,7 +17,7 @@ const app = express();
 
 app.use(cors());
 app.use(morgan('tiny'));
-app.use(express.static('public'))
+app.use(express.static("../client/build"));
 app.use(express.json());
 app.use(router);
 
