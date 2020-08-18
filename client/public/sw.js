@@ -7,8 +7,8 @@ async function createNotificationSubscription() {
     applicationServerKey: pushServerPublicKey,
   });
 }
-
-const API_URL = process && process.env && process.env.REACT_REACT_APP_API_URL || "https://whispering-springs-27123.herokuapp.com/";
+//process && process.env && process.env.REACT_REACT_APP_API_URL ||
+const API_URL = "https://whispering-springs-27123.herokuapp.com/";
 
 async function postSubscription(subscription) {
   const response = await fetch(`${API_URL}/api/subscription`, {
