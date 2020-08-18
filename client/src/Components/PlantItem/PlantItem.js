@@ -14,7 +14,7 @@ function PlantItem({ plant }) {
       <div className="plantcard_img">
         <img
           className="circle_img"
-          src={require("../../assets/" + plant._id + ".jpg")}
+          src={require("../../assets/" + plant.scientificName + ".jpg")}
           alt={plant.commonName}
         />
       </div>
