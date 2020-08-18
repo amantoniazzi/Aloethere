@@ -69,7 +69,7 @@ function MyPlantItem({
           />
           <div className="myplantcard_img">
             <img
-              src={require("../../assets/" + myPlant.plantInfo._id + ".jpg")}
+              src={require("../../assets/" + myPlant.plantInfo.scientificName + ".jpg")}
               alt={myPlant.commonName}
             />
           </div>
