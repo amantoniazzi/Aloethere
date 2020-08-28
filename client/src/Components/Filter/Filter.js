@@ -113,12 +113,12 @@ function Filter({ plants, filterPlants, shouldWater }) {
         <hr className="hr_yellow" />
       )}
       <Flickity
-        className={"carousel"} // default ''
-        elementType={"div"} // default 'div'
-        options={flickityOptions} // takes flickity options {}
-        disableImagesLoaded={false} // default false
-        reloadOnUpdate // default false
-        static // default false
+        className={"carousel"} 
+        elementType={"div"} 
+        options={flickityOptions} 
+        disableImagesLoaded={false} 
+        reloadOnUpdate 
+        static 
       >
         <div className="page1">
           <h3 className="form_subtitle">Are you an expert plant parent?</h3>
