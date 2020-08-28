@@ -60,7 +60,6 @@ exports.editUserPlant = async (req, res) => {
 
   try {
     const plant = await updateUserPlant(req.body.id, updateParams)
-    console.log(req.body.id);
     res.status(200);
     res.json(plant);
   } catch (error) {

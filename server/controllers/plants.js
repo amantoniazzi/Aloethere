@@ -92,7 +92,6 @@ exports.filterPlants = async (req, res) => {
       req.query.water,
       req.query.airPurifying,
       req.query.type);
-    console.log(filterParams)
     const plants = await Plants.find(filterParams);
     res.status(200);
     res.json(plants);
