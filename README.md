@@ -19,5 +19,20 @@ The app runs on an Express server, with a MongoDB (/Mongoose) database. On the f
 
 ## Getting started
 
-You can find default settings to run the server and mongoDB in the index.js files.
-You can start the server with npm run start script, same for the client.
+To get started, install dependencies and start both client and server:
+
+```bash
+cd server
+npm install
+npm run start
+```
+
+```bash
+cd client
+npm install
+npm run start
+```
+
+The environment variables needed to set the application to run are in the .env.example files in both directories.
+
+To checkout the already deployed version of the app, visit: https://whispering-springs-27123.herokuapp.com/
